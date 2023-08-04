@@ -37,7 +37,7 @@ const Social: React.FC<SocialProps> = ({ icon, tip, link }) => {
         <Tooltip tip={tip} active={active}>
             <div className='transition-all group'>
                 <Link
-                    className='transition-all flex justify-center items-center w-[50px] h-[50px] bg-transparent border-none rounded-[10px] cursor-pointer group-hover:bg-neutral_one active:scale-[98%] focus:outline-none focus:ring-2 focus:ring-yellow'
+                    className='transition-all flex justify-center items-center w-[50px] h-[50px] bg-transparent border-none rounded-[10px] cursor-pointer group-hover:bg-neutral_one active:scale-[98%] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow'
                     href={link}
                     target="_blank"
                     rel="noreferrer"

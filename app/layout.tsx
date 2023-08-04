@@ -1,6 +1,11 @@
-import type { Metadata } from 'next'
+'use client'
 
-import './globals.css'
+import type { Metadata } from 'next';
+
+import './globals.css';
+
+import Cursor from '@/components/atoms/Cursor';
+import { useState } from 'react';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -8,10 +13,39 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [mouseX, setMouseX] = useState(0);
+  const [mouseY, setMouseY] = useState(0);
+  const [opacity, setOpacity] = useState(0);
+  const [scale, setScale] = useState(1);
+  const [timeOut, setTimeOut] = useState<ReturnType<typeof setTimeout>>()
+
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    setMouseX(e.clientX);
+    setMouseY(e.clientY);
+    setOpacity(1);
+
+    clearTimeout(timeOut);
+    setTimeOut(setTimeout(() => {
+      setOpacity(0);
+    }, 2000))
+  };
+
   return (
     <html lang="en">
       <body className='font-spacegrotesk'>
-        {children}
+        <div
+          onMouseMove={onMouseMove}
+          onMouseDown={() => setScale(1.25)}
+          onMouseUp={() => setScale(1)}
+        >
+          <Cursor
+            mouseX={mouseX}
+            mouseY={mouseY}
+            scale={scale}
+            opacity={opacity}
+          />
+          {children}
+        </div>
       </body>
     </html>
   )
