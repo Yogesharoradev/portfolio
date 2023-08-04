@@ -29,6 +29,10 @@ module.exports = {
       },
       height: {
         hclamp344: 'clamp(300px, 40vw, 400px)'
+      },
+      fontFamily: {
+        jetbrains: 'JetBrains_Mono',
+        spacegrotesk: 'Space_Grotesk',
       }
     },
   },
