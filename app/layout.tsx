@@ -1,11 +1,12 @@
 'use client'
 
 import type { Metadata } from 'next';
+import { useState } from 'react';
 
 import './globals.css';
 
 import Cursor from '@/components/atoms/Cursor';
-import { useState } from 'react';
+import NavHost from '@/components/molecules/NavHost';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           onMouseDown={() => setScale(1.25)}
           onMouseUp={() => setScale(1)}
         >
+          <NavHost />
           <Cursor
             mouseX={mouseX}
             mouseY={mouseY}
