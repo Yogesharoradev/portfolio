@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import React from 'react';
 
+import { cn } from '@/lib/utils';
 interface NavProps {
     href: string;
     section: string;
@@ -10,22 +10,12 @@ interface NavProps {
 }
 
 const Nav: React.FC<NavProps> = ({ href, section, isSelected }) => {
-    const pathname = usePathname()
-
-    async function handleClick() {
-        if (pathname !== '/') {
-            window.location.href = '/';
-        }
-
-        const el = document.querySelector(href);
-        if (!el) return;
-        el.scrollIntoView(true);
-    }
-
     return (
-        <li className={cn('no-underline list-none font-jetbrains')}>
+        <Link
+            href={href}
+            className={cn('no-underline list-none font-jetbrains rounded-[100px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow active:scale-95')}
+        >
             <div
-                onClick={handleClick}
                 className='bg-transparent hover:bg-transparent border-none text-white_two text-[1.1rem] select-none flex flex-col items-center gap-[.75rem] py-[13px] px-[25px] rounded-[100px] cursor-pointer md:hover:bg-neutral_four group'
                 style={{
                     transition: 'background-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
@@ -63,7 +53,7 @@ const Nav: React.FC<NavProps> = ({ href, section, isSelected }) => {
                     {section}
                 </h5>
             </div>
-        </li>
+        </Link>
     )
 }
 

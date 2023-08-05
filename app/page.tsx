@@ -4,8 +4,6 @@ export default function Home() {
   return (
     <div className="">
       <Hero />
-      <Hero />
-      <Hero />
     </div>
   )
 }
