@@ -89,8 +89,8 @@ const RichPresence: React.FC = () => {
             }
 
             const getMusicProgress = (spotify: Spotify) => {
-                let spotifyTotal = spotify.timestamps.end - spotify.timestamps.start;
-                let progress = 100 - (100 * (spotify.timestamps.end - new Date().getTime())) / spotifyTotal;
+                let spotifyTotal = spotify?.timestamps?.end - spotify?.timestamps?.start;
+                let progress = 100 - (100 * (spotify?.timestamps?.end - new Date().getTime())) / spotifyTotal;
 
                 setMusicDuration(
                     new Date(new Date().getTime() - spotify.timestamps.start).toISOString().slice(14, 19) + ' / ' +
@@ -160,7 +160,7 @@ const RichPresence: React.FC = () => {
                         alt={activity}
                         fill
                         className={cn("rounded-[20px] relative select-none", {
-                            "animate-[spin_40s_linear_infinite] rounded-[50%]": isSpotify
+                            "animate-[spin_40s_linear_infinite] rounded-[100%]": isSpotify
                         })}
                         style={{ transition: 'all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
                     />
@@ -171,7 +171,7 @@ const RichPresence: React.FC = () => {
                             alt={activity}
                             width={40}
                             height={40}
-                            className="rounded-[50%] absolute -right-3 -bottom-3 outline-[6px] outline-bg_color bg-bg_color"
+                            className="rounded-[100%] absolute -right-3 -bottom-3 outline-[6px] outline-bg_color bg-bg_color"
                         />
                     )}
                 </div>
@@ -187,16 +187,18 @@ const RichPresence: React.FC = () => {
                             style={{ transition: '.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' }}
                         >
                             <Tooltip tip="Open Spotify">
-                                <h3 className='font-spacegrotesk'>{activity}</h3>
+                                <h3 className='font-spacegrotesk '>{activity}</h3>
                             </Tooltip>
                         </Link>
                     ) : (
-                        <h3 className='font-spacegrotesk'>{activity}</h3>
+                        <h3 className='font-spacegrotesk '>{activity}</h3>
                     )}
                     <h5 className='hidden md:block'>{(!isSpotify && !isActivity && customStatus) || ''}</h5>
-                    <h5>{details || ''}</h5>
-                    <h5>{state || ''}</h5>
-                    <h5>{!isActivity && `on ${timeCurr}`}</h5>
+                    <h5 className=''>{
+                        details ? details.length > 28 ? (details.slice(0, 25) + '...') : details : ''
+                    }</h5>
+                    <h5 className=''>{state || ''}</h5>
+                    <h5 className=''>{!isActivity && `on ${timeCurr}`}</h5>
                     {isSpotify ? (
                         <>
                             <progress

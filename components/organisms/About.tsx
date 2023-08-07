@@ -29,7 +29,9 @@ const About: React.FC = () => {
             <div>
                 <RichPresence />
             </div>
-            <div className="relative leading-[1.75rem] before:">
+            <div className="relative leading-[1.75rem] 
+            before:content-['hemant'] before:h-[300px] before:text-[300px] before:font-[700] before:-z-10 before:select-none before:translate-x-[320px] before:translate-y-[-5%] webkit_text_stroke before:opacity-[0.22] before:absolute
+            ">
                 <h2 className='md:hidden mb-4 md:mt-4 md:mb-0'>bio</h2>
                 <p>
                     Hey there, I&rsquo;m Hemant! :] I&rsquo;m a{" "}
