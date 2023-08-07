@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import useSound from 'use-sound';
+// import useSound from 'use-sound';
 
 import Cursor from '@/components/atoms/Cursor';
 import NavHost from '@/components/molecules/NavHost';
@@ -13,14 +13,14 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
     const [scale, setScale] = useState(1);
     const [timeOut, setTimeOut] = useState<ReturnType<typeof setTimeout>>()
 
-    const [playSound] = useSound('../public/sounds/click.mp3');
+    // const [playSound] = useSound('../public/sounds/click.mp3');
 
-    useEffect(() => {
-        document.addEventListener('click', playSound);
-        return () => {
-            document.removeEventListener('click', playSound);
-        };
-    }, [playSound]);
+    // useEffect(() => {
+    //     document.addEventListener('click', playSound);
+    //     return () => {
+    //         document.removeEventListener('click', playSound);
+    //     };
+    // }, [playSound]);
 
 
     const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -41,7 +41,7 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
                     onMouseMove={onMouseMove}
                     onMouseDown={() => setScale(1.25)}
                     onMouseUp={() => setScale(1)}
-                    onClick={playSound}
+                // onClick={playSound}
                 >
                     <NavHost />
                     <Cursor
