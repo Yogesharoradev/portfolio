@@ -6,7 +6,7 @@ import useSound from 'use-sound';
 import Cursor from '@/components/atoms/Cursor';
 import NavHost from '@/components/molecules/NavHost';
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function PageLayout({ children }: { children: React.ReactNode }) {
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);
     const [opacity, setOpacity] = useState(0);
