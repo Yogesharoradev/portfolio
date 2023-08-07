@@ -14,7 +14,6 @@ const HeroImage: React.FC = () => {
         let rotateX = -13 * ((e.nativeEvent.offsetY - img.clientWidth / 2) / img.clientHeight);
 
         setRotate({ x: rotateX, y: rotateY });
-        console.log(rotateX, rotateY)
     }
 
     const onMouseLeave = () => {

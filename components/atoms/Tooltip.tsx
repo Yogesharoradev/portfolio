@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 
 interface TooltipProps {
     tip: string;
-    active: boolean;
+    active?: boolean;
     children: React.ReactNode;
 }
 

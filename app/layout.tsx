@@ -1,7 +1,8 @@
 'use client'
 
 import type { Metadata } from 'next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useSound from 'use-sound';
 
 import './globals.css';
 
@@ -19,6 +20,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const [opacity, setOpacity] = useState(0);
   const [scale, setScale] = useState(1);
   const [timeOut, setTimeOut] = useState<ReturnType<typeof setTimeout>>()
+
+  const [playSound] = useSound('../public/sounds/click.mp3');
+
+  useEffect(() => {
+    document.addEventListener('click', playSound);
+    return () => {
+      document.removeEventListener('click', playSound);
+    };
+  }, [playSound]);
+
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     setMouseX(e.clientX);
@@ -38,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           onMouseMove={onMouseMove}
           onMouseDown={() => setScale(1.25)}
           onMouseUp={() => setScale(1)}
+          onClick={playSound}
         >
           <NavHost />
           <Cursor
