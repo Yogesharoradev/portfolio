@@ -30,7 +30,8 @@ const About: React.FC = () => {
                 <RichPresence />
             </div>
             <div className="relative leading-[1.75rem] 
-            before:content-['hemant'] before:h-[300px] before:text-[300px] before:font-[700] before:-z-10 before:select-none before:translate-x-[320px] before:translate-y-[-5%] webkit_text_stroke before:opacity-[0.22] before:absolute
+            before:content-['hem'] before:h-[300px] before:text-[150px] before:font-[700] before:-z-10 before:select-none before:translate-x-[130%] before:translate-y-[8%] webkit_text_stroke before:opacity-[0.22] before:absolute
+            after:content-['ant'] after:h-[300px] after:text-[200px] after:font-[700] after:-z-10 after:select-none after:translate-x-[140%] after:translate-y-[-35%] webkit_text_stroke_after after:opacity-[0.22] after:absolute
             ">
                 <h2 className='md:hidden mb-4 md:mt-4 md:mb-0'>bio</h2>
                 <p>
@@ -38,16 +39,16 @@ const About: React.FC = () => {
                     <Tooltip tip={age!}>
                         <span className='bio_span'>{Math.floor(Number(age))}</span>
                     </Tooltip>{" "}
-                    year old digital artist and graphic/UI designer based in Canada. I&rsquo;ve taken art seriously since{" "}
-                    <span className='bio_span'>2017</span>, and have been doodling silly anime characters since <span className='bio_span'>2020</span>.
-                    Recently, however, I&rsquo;ve grown a knack for programming. I like contributing to{" "}
+                    year old frontend developer and freelancer based in India. I&rsquo;ve taken coding seriously since{" "}
+                    <span className='bio_span'>2021</span>, and have been freelancing since <span className='bio_span'>2022</span>.
+                    Recently, however, I&rsquo;ve grown a knack for giving back to community. I like contributing to{" "}
                     <Tooltip tip="🤓">
-                        <Link className='no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow rounded-[7px]' href="https://github.com/xafn" target="_blank" rel="noreferrer">
+                        <Link className='no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow rounded-[7px]' href="https://github.com/hemantwasthere" target="_blank" rel="noreferrer">
                             <span className='bio_span'>open source</span>
                         </Link>
                     </Tooltip>{" "}
                     as a web developer, which is probably the reason why you&rsquo;ve ended up here. Currently struggling
-                    with Svelte and Typescript.
+                    with Prisma and Typescript.
                 </p>
             </div>
         </section>

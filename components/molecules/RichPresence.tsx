@@ -180,7 +180,7 @@ const RichPresence: React.FC = () => {
                 <div>
                     {isSpotify ? (
                         <Link
-                            className='rounded-[4px] underline decoration-bg_color hover:decoration-white'
+                            className='rounded-[4px] py-2 underline decoration-bg_color hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow'
                             href={songLink}
                             target="_blank"
                             rel="noreferrer"

@@ -19,15 +19,15 @@ const Repos: React.FC = () => {
 
 
     return (
-        <section className="wrapper" id="work">
+        <section className="wrapper pb-5 md:pb-0" id="work">
             <div className="title flex justify-start mt-0 md:justify-center">
                 <h2 className='inline-block mb-4'>
                     <span className='text-yellow'>code</span>:work
                 </h2>
             </div>
 
-            <div className="gap-[.8rem] flex-col justify-center items-center grid grid-cols-[1fr] sm:grid-cols-[1fr_1fr] mb-8 sm:mb-12 relative before:content-['𝝺'] before:h-[300px] before:text-[175px] before:-z-10 before:select-none before:translate-x-[1140%] before:translate-y-[-50%] webkit_text_stroke before:opacity-[0.25] before:tracking-[-0.075em] before:absolute">
-                {repos ? (
+            <div className="gap-[.8rem] flex-col justify-center items-center grid grid-cols-[1fr] md:grid-cols-[1fr_1fr] mb-8 md:mb-12 relative before:content-['𝝺'] before:h-[300px] before:text-[175px] before:-z-10 before:select-none before:translate-x-[1140%] before:translate-y-[-50%] webkit_text_stroke before:opacity-[0.25] before:tracking-[-0.075em] before:absolute">
+                {repos.length > 0 ? (
                     <>
                         {repos.map(({ link, owner, repo, description, languageColor, language, stars, forks }) => (
                             <Link
@@ -38,7 +38,7 @@ const Repos: React.FC = () => {
                                 rel="noreferrer"
                             >
                                 <div
-                                    className="repo-card group py-4 px-6 bg-neutral_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-neutral_four hover:translate-y-[-2px] repo_shadow"
+                                    className="repo_card group"
                                     style={{
                                         transition: 'transform 0.3s var(--bezier-one), box-shadow 0.3s var(--bezier-one)'
                                     }}
@@ -115,10 +115,10 @@ const Repos: React.FC = () => {
                     </>
                 ) : (
                     <>
-                        <div className="repo-card shimmer" />
-                        <div className="repo-card shimmer" />
-                        <div className="repo-card shimmer" />
-                        <div className="repo-card shimmer" />
+                        <div className="repo_card shimmer" />
+                        <div className="repo_card shimmer" />
+                        <div className="repo_card shimmer" />
+                        <div className="repo_card shimmer" />
                     </>
                 )}
             </div>
