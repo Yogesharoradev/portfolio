@@ -2,7 +2,7 @@ import React from 'react';
 // import useSound from "use-sound";
 // import clicksound from "../../public/sounds/click.mp3";
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode;
 }
 

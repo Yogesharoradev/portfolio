@@ -42,7 +42,7 @@ const About: React.FC = () => {
                     <span className='bio_span'>2017</span>, and have been doodling silly anime characters since <span className='bio_span'>2020</span>.
                     Recently, however, I&rsquo;ve grown a knack for programming. I like contributing to{" "}
                     <Tooltip tip="🤓">
-                        <Link className='no-underline' href="https://github.com/xafn" target="_blank" rel="noreferrer">
+                        <Link className='no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow rounded-[7px]' href="https://github.com/xafn" target="_blank" rel="noreferrer">
                             <span className='bio_span'>open source</span>
                         </Link>
                     </Tooltip>{" "}

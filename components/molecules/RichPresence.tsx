@@ -198,7 +198,7 @@ const RichPresence: React.FC = () => {
                         details ? details.length > 28 ? (details.slice(0, 25) + '...') : details : ''
                     }</h5>
                     <h5 className=''>{state || ''}</h5>
-                    <h5 className=''>{!isActivity && `on ${timeCurr}`}</h5>
+                    <h5 className=''>{!isActivity && timeCurr}</h5>
                     {isSpotify ? (
                         <>
                             <progress

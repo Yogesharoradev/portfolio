@@ -1,4 +1,4 @@
-'use client'
+import Link from 'next/link'
 
 import Button from '@/components/atoms/Button'
 import HeroImage from '@/components/atoms/HeroImage'
@@ -21,9 +21,11 @@ const Hero: React.FC = () => {
                     <div className="mt-4 mb-[1.7rem]">
                         <Socials />
                     </div>
-                    <Button>
-                        Discover my work ↓
-                    </Button>
+                    <Link href="#work">
+                        <Button>
+                            Discover my work ↓
+                        </Button>
+                    </Link>
                 </div>
                 <HeroImage />
             </section >

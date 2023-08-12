@@ -83,3 +83,15 @@ export interface Kv {
     lanyard_api_key: string;
 }
 
+export interface Repo {
+    owner: string;
+    repo: string;
+    link: string;
+    description: string;
+    image: string;
+    website: string;
+    language: string;
+    languageColor: string;
+    stars: string;
+    forks: any;
+}
