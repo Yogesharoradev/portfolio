@@ -1,39 +1,41 @@
-'use client'
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 interface TooltipProps {
-    tip: string;
-    active?: boolean;
-    children: React.ReactNode;
+  tip: string;
+  active?: boolean;
+  children: React.ReactNode;
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ tip, active, children }) => {
-    const [isMounted, setIsMounted] = useState(false)
+  const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => setIsMounted(true), [])
+  useEffect(() => setIsMounted(true), []);
 
-    if (!isMounted) return null
+  if (!isMounted) return null;
 
-    return (
-        <div className="relative inline-block group">
-            <span
-                style={{
-                    transition: 'opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, margin-top 0.2s ease-in-out'
-                }}
-                className={cn("font-normal font-jetbrains text-sm group-hover:opacity-100 group-hover:-mt-2 absolute inline-block whitespace-nowrap opacity-0 left-[50%] top-0 leading-normal translate-x-[-50%] translate-y-[-120%] py-[0.15rem] px-[.5rem] rounded-[6px] bg-yellow text-neutral_one text-[.9rem] tracking-[-.075em] after:border-solid after:border-transparent after:border-l-[10px] after:border-r-[10px] after:border-t-[10px] after:border-t-yellow after:-bottom-2 after:content-[' '] after:h-0 after:w-0 after:left-[50%] after:ml-[-10px] after:absolute focus-visible:opacity-100 focus-visible:visible focus-visible:-mt-2", {
-                    'opacity-100 -mt-2': active
-                })}
-            >
-                {tip}
-            </span>
-            <span className="tooltip-slot">
-                {children}
-            </span>
-        </div>
-    );
+  return (
+    <div className="relative inline-block group">
+      <span
+        style={{
+          transition:
+            "opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, margin-top 0.2s ease-in-out",
+        }}
+        className={cn(
+          "font-normal font-jetbrains text-sm group-hover:opacity-100 group-hover:-mt-2 absolute inline-block whitespace-nowrap opacity-0 left-[50%] top-0 leading-normal translate-x-[-50%] translate-y-[-120%] py-[0.15rem] px-[.5rem] rounded-[6px] bg-yellow text-neutral_one text-[.9rem] tracking-[-.075em] after:border-solid after:border-transparent after:border-l-[10px] after:border-r-[10px] after:border-t-[10px] after:border-t-yellow after:-bottom-2 after:content-[' '] after:h-0 after:w-0 after:left-[50%] after:ml-[-10px] after:absolute focus-visible:opacity-100 focus-visible:visible focus-visible:-mt-2",
+          {
+            "opacity-100 -mt-2": active,
+          }
+        )}
+      >
+        {tip}
+      </span>
+      <span className="tooltip-slot">{children}</span>
+    </div>
+  );
 };
 
 export default Tooltip;

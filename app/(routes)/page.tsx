@@ -1,6 +1,6 @@
-import About from '@/components/organisms/About'
-import Hero from '@/components/organisms/Hero'
-import Repos from '@/components/organisms/Repos'
+import About from "@/components/organisms/About";
+import Hero from "@/components/organisms/Hero";
+import Repos from "@/components/organisms/Repos";
 
 export default function Home() {
   return (
@@ -9,5 +9,5 @@ export default function Home() {
       <About />
       <Repos />
     </div>
-  )
+  );
 }

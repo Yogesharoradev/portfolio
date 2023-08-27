@@ -3,23 +3,25 @@
 @tailwind utilities;
 
 /* thanks https://gwfh.mranftl.com/fonts */
- /* ------------------------------------------------------------------------ */
- /* space-grotesk-300 */
+/* ------------------------------------------------------------------------ */
+/* space-grotesk-300 */
 @font-face {
   font-display: swap;
   font-family: "Space_Grotesk";
   font-style: normal;
   font-weight: 300;
-  src: url("../public/fonts/space-grotesk-v15-latin-300.woff2") format("woff2"),
+  src:
+    url("../public/fonts/space-grotesk-v15-latin-300.woff2") format("woff2"),
     url("../public/fonts/space-grotesk-v15-latin-300.woff") format("woff");
 }
- /* space-grotesk-regular */
+/* space-grotesk-regular */
 @font-face {
   font-display: swap;
   font-family: "Space_Grotesk";
   font-style: normal;
   font-weight: 400;
-  src: url("../public/fonts/space-grotesk-v15-latin-regular.woff2") format("woff2"),
+  src:
+    url("../public/fonts/space-grotesk-v15-latin-regular.woff2") format("woff2"),
     url("../public/fonts/space-grotesk-v15-latin-regular.woff") format("woff");
 }
 /* space-grotesk-500 */
@@ -28,16 +30,18 @@
   font-family: "Space_Grotesk";
   font-style: normal;
   font-weight: 500;
-  src: url("../public/fonts/space-grotesk-v15-latin-500.woff2") format("woff2"),
+  src:
+    url("../public/fonts/space-grotesk-v15-latin-500.woff2") format("woff2"),
     url("../public/fonts/space-grotesk-v15-latin-500.woff") format("woff");
 }
- /* space-grotesk-600 */
+/* space-grotesk-600 */
 @font-face {
   font-display: swap;
   font-family: "Space_Grotesk";
   font-style: normal;
   font-weight: 600;
-  src: url("../public/fonts/space-grotesk-v15-latin-600.woff2") format("woff2"),
+  src:
+    url("../public/fonts/space-grotesk-v15-latin-600.woff2") format("woff2"),
     url("../public/fonts/space-grotesk-v15-latin-600.woff") format("woff");
 }
 /* space-grotesk-700 */
@@ -46,35 +50,40 @@
   font-family: "Space_Grotesk";
   font-style: normal;
   font-weight: 700;
-  src: url("../public/fonts/space-grotesk-v15-latin-700.woff2") format("woff2"),
+  src:
+    url("../public/fonts/space-grotesk-v15-latin-700.woff2") format("woff2"),
     url("../public/fonts/space-grotesk-v15-latin-700.woff") format("woff");
 }
- /* ------------------------------------------------------------------------ */
- /* jetbrains-mono-300 */
+/* ------------------------------------------------------------------------ */
+/* jetbrains-mono-300 */
 @font-face {
   font-display: swap;
   font-family: "JetBrains_Mono";
   font-style: normal;
   font-weight: 300;
-  src: url("../public/fonts/jetbrains-mono-v18-latin-300.woff2") format("woff2"),
+  src:
+    url("../public/fonts/jetbrains-mono-v18-latin-300.woff2") format("woff2"),
     url("../public/fonts/jetbrains-mono-v18-latin-300.woff") format("woff");
 }
- /* jetbrains-mono-regular */
+/* jetbrains-mono-regular */
 @font-face {
   font-display: swap;
   font-family: "JetBrains_Mono";
   font-style: normal;
   font-weight: 400;
-  src: url("../public/fonts/jetbrains-mono-v18-latin-regular.woff2") format("woff2"),
+  src:
+    url("../public/fonts/jetbrains-mono-v18-latin-regular.woff2")
+      format("woff2"),
     url("../public/fonts/jetbrains-mono-v18-latin-regular.woff") format("woff");
 }
- /* jetbrains-mono-500 */
+/* jetbrains-mono-500 */
 @font-face {
   font-display: swap;
   font-family: "JetBrains_Mono";
   font-style: normal;
   font-weight: 500;
-  src: url("../public/fonts/jetbrains-mono-v18-latin-500.woff2") format("woff2"),
+  src:
+    url("../public/fonts/jetbrains-mono-v18-latin-500.woff2") format("woff2"),
     url("../public/fonts/jetbrains-mono-v18-latin-500.woff") format("woff");
 }
 /* jetbrains-mono-600 */
@@ -83,7 +92,8 @@
   font-family: "JetBrains_Mono";
   font-style: normal;
   font-weight: 600;
-  src: url("../public/fonts/jetbrains-mono-v18-latin-600.woff2") format("woff2"),
+  src:
+    url("../public/fonts/jetbrains-mono-v18-latin-600.woff2") format("woff2"),
     url("../public/fonts/jetbrains-mono-v18-latin-600.woff") format("woff");
 }
 /* jetbrains-mono-700 */
@@ -92,221 +102,219 @@
   font-family: "JetBrains_Mono";
   font-style: normal;
   font-weight: 700;
-  src: url("../public/fonts/jetbrains-mono-v18-latin-700.woff2") format("woff2"),
+  src:
+    url("../public/fonts/jetbrains-mono-v18-latin-700.woff2") format("woff2"),
     url("../public/fonts/jetbrains-mono-v18-latin-700.woff") format("woff");
 }
 
-
 @layer utilities {
-    .bio_span {
-        @apply font-normal font-jetbrains text-[.9rem] bg-neutral_one rounded-[7px] text-yellow py-[.2rem] px-[.5rem] w-fit
-    }
-    .repo_card {
-        @apply py-4 px-6 bg-neutral_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-neutral_four hover:translate-y-[-2px] repo_shadow
-    }
+  .bio_span {
+    @apply font-normal font-jetbrains text-[.9rem] bg-neutral_one rounded-[7px] text-yellow py-[.2rem] px-[.5rem] w-fit;
+  }
+  .repo_card {
+    @apply py-4 px-6 bg-neutral_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-neutral_four hover:translate-y-[-2px] repo_shadow;
+  }
 }
 
-
 * {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth;
-    scroll-margin-top: 6rem;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    /* font-family: var(--font-one); */
-    @media (max-width: 868px) {
-        scroll-margin-top: 1rem;
-    }
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 6rem;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* font-family: var(--font-one); */
+  @media (max-width: 868px) {
+    scroll-margin-top: 1rem;
+  }
 }
 
 html {
-    box-sizing: border-box;
-    letter-spacing: -0.05em;
-    overflow-x: hidden;
+  box-sizing: border-box;
+  letter-spacing: -0.05em;
+  overflow-x: hidden;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    background-color: var(--bg-color);
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  line-height: 1.4;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .wrapper {
-    min-height: 0vw;
-    margin-inline: auto;
-    width: min(90%, 62rem) !important;
+  min-height: 0vw;
+  margin-inline: auto;
+  width: min(90%, 62rem) !important;
 }
 
 @media (max-width: 868px) {
-    .wrapper {
-        margin-bottom: 4.75rem;
-    }
+  .wrapper {
+    margin-bottom: 4.75rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .wrapper {
-        width: min(88%, 65rem) !important;
-    }
+  .wrapper {
+    width: min(88%, 65rem) !important;
+  }
 }
 
-
 body.stop-transitions * {
-    transition: none !important;
+  transition: none !important;
 }
 
 :root {
-    --white: #eed1c7;
-    --white-two: hsl(0, 17%, 69%);
-    --yellow: #dba895;
-    --yellow-opacity: #dba8952a;
-    --bg-color: hsl(0, 11%, 8%);
-    --neutral-one: #211c1c;
-    --neutral-two: #211c1c75;
-    --neutral-three: #1e1a1a;
-    --neutral-four: rgba(123, 115, 115, 0.227);
-    --neutral-five: #1f1919ca;
-    --font-one: "Space_Grotesk", sans-serif;
-    --font-two: "JetBrains_Mono", monospace;
-    --bezier-one: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --white: #eed1c7;
+  --white-two: hsl(0, 17%, 69%);
+  --yellow: #dba895;
+  --yellow-opacity: #dba8952a;
+  --bg-color: hsl(0, 11%, 8%);
+  --neutral-one: #211c1c;
+  --neutral-two: #211c1c75;
+  --neutral-three: #1e1a1a;
+  --neutral-four: rgba(123, 115, 115, 0.227);
+  --neutral-five: #1f1919ca;
+  --font-one: "Space_Grotesk", sans-serif;
+  --font-two: "JetBrains_Mono", monospace;
+  --bezier-one: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 ::selection {
-    background: var(--yellow-opacity);
+  background: var(--yellow-opacity);
 }
 
 /*-----headings-----*/
 h1 {
-    color: var(--white);
-    font-weight: 600;
-    letter-spacing: -0.075em;
-    line-height: 0.05rem;
-    line-height: 101.6%;
-    font-size: 6rem;
+  color: var(--white);
+  font-weight: 600;
+  letter-spacing: -0.075em;
+  line-height: 0.05rem;
+  line-height: 101.6%;
+  font-size: 6rem;
 }
 
 h2 {
-    color: var(--white);
-    font-weight: 500;
-    font-size: 2.25rem;
-    border-radius: 12px;
-    width: fit-content;
-    text-align: left;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 2.25rem;
+  border-radius: 12px;
+  width: fit-content;
+  text-align: left;
 }
 
 h3 {
-    color: var(--white);
-    font-weight: 500;
-    font-size: 1.4rem;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.4rem;
 }
 
 h4 {
-    color: var(--white-two);
-    font-weight: 300;
-    font-size: 1.6rem;
+  color: var(--white-two);
+  font-weight: 300;
+  font-size: 1.6rem;
 }
 
 h5 {
-    color: var(--white-two);
-    font-size: 1.15rem;
-    /* font-family: var(--font-two); */
-    font-weight: 300;
-    letter-spacing: -0.075em;
+  color: var(--white-two);
+  font-size: 1.15rem;
+  /* font-family: var(--font-two); */
+  font-weight: 300;
+  letter-spacing: -0.075em;
 }
 
 h6 {
-    color: var(--white-two);
-    font-size: 0.9rem;
-    /* font-family: var(--font-two); */
-    font-weight: 300;
-    letter-spacing: -0.075em;
+  color: var(--white-two);
+  font-size: 0.9rem;
+  /* font-family: var(--font-two); */
+  font-weight: 300;
+  letter-spacing: -0.075em;
 }
 
 p {
-    color: var(--white-two);
-    font-weight: 300;
-    font-size: 1.1rem;
-    letter-spacing: -0rem;
-    line-height: 1.75rem;
+  color: var(--white-two);
+  font-weight: 300;
+  font-size: 1.1rem;
+  letter-spacing: -0rem;
+  line-height: 1.75rem;
 }
 
 @keyframes float {
-    0% {
-        transform: translateY(7px);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
-    100% {
-        transform: translateY(7px);
-    }
+  0% {
+    transform: translateY(7px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+  100% {
+    transform: translateY(7px);
+  }
 }
 
 .img-container {
-    z-index: 1;
-    animation: float 6s ease-in-out infinite;
-    animation-play-state: running;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+  animation-play-state: running;
 }
 
 @media (max-width: 1240px) {
-    .img-container{
-        display: flex;
-        justify-content: center;
-    }
+  .img-container {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 868px) {
-    h2 {
-        display: block;
-        padding: 0;
-        background-color: transparent;
-        font-size: 1.75rem;
-        margin-bottom: 0.3rem;
-        display: inline-block;
-    }
+  h2 {
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.75rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+  }
 
-    h3 {
-        font-size: 1.2rem;
-    }
+  h3 {
+    font-size: 1.2rem;
+  }
 
-    h5 {
-        font-size: 1rem;
-    }
+  h5 {
+    font-size: 1rem;
+  }
 
-    p {
-        font-size: 1rem;
-    }
+  p {
+    font-size: 1rem;
+  }
 }
 
 progress {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 0;
-    border-radius: 10rem;
-    margin: 0;
-    margin-top: 0.6rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  border-radius: 10rem;
+  margin: 0;
+  margin-top: 0.6rem;
+  background-color: var(--neutral-one);
+  height: 0.6rem;
+  overflow: hidden;
+
+  &::-webkit-progress-bar {
     background-color: var(--neutral-one);
-    height: 0.6rem;
-    overflow: hidden;
+    border-radius: 10rem;
+  }
 
-    &::-webkit-progress-bar {
-        background-color: var(--neutral-one);
-        border-radius: 10rem;
-    }
+  /* dont ask me why these have to be duplicated because idk either */
+  &[value]::-webkit-progress-value {
+    background-color: var(--yellow);
+    border-radius: 10rem;
+  }
 
-    /* dont ask me why these have to be duplicated because idk either */
-    &[value]::-webkit-progress-value {
-        background-color: var(--yellow);
-        border-radius: 10rem;
-    }
-
-    &[value]::-moz-progress-bar {
-        background-color: var(--yellow);
-        border-radius: 10rem;
-    }
+  &[value]::-moz-progress-bar {
+    background-color: var(--yellow);
+    border-radius: 10rem;
+  }
 }
 
 /* @media screen and (max-width: 868px) {
@@ -315,69 +323,67 @@ progress {
     }
 } */
 
-
 /*-----scrollbar-----*/
 /* Firefox */
 * {
-    scrollbar-width: 11px;
-    scrollbar-color: #1e1a1a #211c1c;
+  scrollbar-width: 11px;
+  scrollbar-color: #1e1a1a #211c1c;
 }
 
 ::-webkit-scrollbar {
-    width: 11px;
+  width: 11px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e1a1a;
-    background-clip: content-box;
+  background: #1e1a1a;
+  background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #211c1c;
+  background: #211c1c;
 }
 
-
 .webkit_text_stroke::before {
-    -webkit-text-stroke: 2px #eed1c7;
-    color: transparent
+  -webkit-text-stroke: 2px #eed1c7;
+  color: transparent;
 }
 
 .webkit_text_stroke_after::after {
-    -webkit-text-stroke: 2px #eed1c7;
-    color: transparent
+  -webkit-text-stroke: 2px #eed1c7;
+  color: transparent;
 }
 
 .webkit_backdrop_filter_15px {
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0px 15px 8px -10px rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0px 15px 8px -10px rgba(0, 0, 0, 0.4);
 }
 
 .repo_shadow:hover {
-    -webkit-backdrop-filter: blur(15px);
-    box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.25);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.25);
 }
 
 .shimmer {
-    animation-duration: 2.2s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-    animation-name: shimmer;
-    animation-timing-function: linear;
-    background: #ddd;
-    background: linear-gradient(
-        to right,
-        var(--neutral-two) 8%,
-        var(--neutral-one) 18%,
-        var(--neutral-two) 33%
-    );
-    background-size: 1200px 100%;
+  animation-duration: 2.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: #ddd;
+  background: linear-gradient(
+    to right,
+    var(--neutral-two) 8%,
+    var(--neutral-one) 18%,
+    var(--neutral-two) 33%
+  );
+  background-size: 1200px 100%;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -1200px 0;
-    }
-    100% {
-        background-position: 1200px 0;
-    }
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
 }

@@ -1,19 +1,20 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import './globals.css';
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'Hemant',
-  description: 'Aesthetic, minimalistic, and responsive portfolio website.',
-}
+  title: "Hemant",
+  description: "Aesthetic, minimalistic, and responsive portfolio website.",
+};
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
-
