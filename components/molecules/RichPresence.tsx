@@ -1,7 +1,5 @@
 "use client";
 
-const revalidate = 0;
-
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -77,18 +75,26 @@ const RichPresence: React.FC = () => {
       `https://cdn.discordapp.com/avatars/${user.id}/${data?.discord_user.avatar}.png?size=512`
     );
 
-    if (data?.listening_to_spotify) setIsSpotify(data?.listening_to_spotify);
-    setIsActivity(!!data?.activities[0]);
+    if (data?.listening_to_spotify) setIsSpotify(true);
+    else setIsSpotify(false);
+
+    if (!!data?.activities[0]) setIsActivity(true);
+    else setIsActivity(false);
 
     if (data?.activities[0]?.name === "Custom Status") {
       setCustomStatus(
         `${data?.activities[0]?.emoji?.name} ${data?.activities[0]?.state}`
       );
+    } else {
+      setCustomStatus("");
     }
 
-    if (customStatus && data?.activities[1]) {
+    if (data?.activities[1]) {
       setIsActivity(true);
       setActivityNumber(1);
+    } else {
+      setIsActivity(false);
+      setActivityNumber(0);
     }
 
     const tick = () => {
@@ -141,8 +147,6 @@ const RichPresence: React.FC = () => {
       tick();
     }
   }, [activityNumber, customStatus, data, images, isActivity, isSpotify]);
-
-  console.log(data);
 
   if (!isMounted) return null;
 
