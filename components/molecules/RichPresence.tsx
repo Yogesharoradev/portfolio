@@ -1,19 +1,14 @@
 "use client";
 
-const revalidate = 0;
-
-import { useEffect, useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/atoms/Tooltip";
 import { cn, user } from "@/lib/utils";
-import spotify_img from "@/public/spotify.svg";
 import { DiscordResponse, Spotify } from "@/types";
 
 const RichPresence: React.FC = () => {
-  const [isMounted, setIsMounted] = useState(false);
   let [activity, setActivity] = useState(`@${user.username}`);
   let [details, setDetails] = useState<string>("Fetching...");
 
@@ -21,9 +16,9 @@ const RichPresence: React.FC = () => {
   const [elapsedTime, setElapsedTime] = useState("");
   const [musicProgress, setMusicProgress] = useState("0");
 
-  const [isActivity, setIsActivity] = useState(false);
+  const [isActivity, setIsActivity] = useState<boolean | null>();
   const [activityNumber, setActivityNumber] = useState(0);
-  const [isSpotify, setIsSpotify] = useState(false);
+  const [isSpotify, setIsSpotify] = useState<boolean | null>();
   let [state, setState] = useState("");
   let [activityImage, setActivityImage] = useState("");
   const [songLink, setSongLink] = useState("");
@@ -31,15 +26,19 @@ const RichPresence: React.FC = () => {
   const [musicDuration, setMusicDuration] = useState("");
   const [customStatus, setCustomStatus] = useState("");
 
-  useEffect(() => setIsMounted(true), []);
+  const [pulse, setPulse] = useState(30000);
+  const [currentSetInterval, setCurrentSetInterval] =
+    useState<ReturnType<typeof setInterval>>();
+  const [currentRequestAnimationFrame, setCurrentRequestAnimationFrame] =
+    useState<number>();
 
   const localTime = () =>
     setTimeCurr(new Date().toLocaleTimeString("en-US", { timeZone: "IST" }));
 
-  useEffect(() => {
-    const interval = setInterval(() => localTime(), 1000);
-    return () => clearInterval(interval);
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => localTime(), 1000);
+  //   return () => clearInterval(interval);
+  // }, []);
 
   const getElapsedTime = (timestampStart: number) => {
     let elapsedMs = new Date().getTime() - timestampStart;
@@ -52,114 +51,148 @@ const RichPresence: React.FC = () => {
     }
   };
 
+  const getMusicProgress = (spotify: Spotify) => {
+    let spotifyTotal = spotify?.timestamps?.end - spotify?.timestamps?.start;
+    let progress =
+      100 -
+      (100 * (spotify?.timestamps?.end - new Date().getTime())) / spotifyTotal;
+
+    setMusicDuration(
+      new Date(new Date().getTime() - spotify.timestamps.start)
+        .toISOString()
+        .slice(14, 19) +
+        " / " +
+        new Date(spotifyTotal).toISOString().slice(14, 19)
+    );
+
+    setMusicProgress(progress.toString());
+  };
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const images: { [key: string]: string } = {
     "CLIP STUDIO PAINT": "https://i.imgur.com/IUVs3RB.png",
   };
 
   useEffect(() => {
-    const fetchDcData = async () => {
-      const res = await fetch(`https://api.lanyard.rest/v1/users/${user.id}`);
-      const { data } = await res.json();
+    localTime();
+    setCurrentSetInterval(setInterval(() => localTime(), 1000));
+  }, []);
 
-      setActivityImage(
-        `https://cdn.discordapp.com/avatars/${user.id}/${data?.discord_user.avatar}.png?size=512`
-      );
+  useEffect(() => {
+    function connect() {
+      clearInterval(currentSetInterval); // don't need this anymore
+      let lanyard: WebSocket = new WebSocket("wss://api.lanyard.rest/socket");
+      lanyard.onopen = () => console.log("Synced with Discord rich presence!");
 
-      if (data?.spotify) setIsSpotify(true);
-      else setIsSpotify(false);
+      lanyard.onmessage = (e) => {
+        let json = JSON.parse(e.data);
+        let opcode = json.op;
+        let data = json.d;
+        console.log(data, json);
 
-      if (!!data?.activities[0]) setIsActivity(true);
-      else setIsActivity(false);
-
-      if (data?.activities[0]?.name === "Custom Status") {
-        setCustomStatus(
-          `${data?.activities[0]?.emoji?.name} ${data?.activities[0]?.state}`
-        );
-      } else setCustomStatus("");
-
-      if (customStatus && data.activities[1]) {
-        setIsActivity(true);
-        setActivityNumber(1);
-      } else {
-        setIsActivity(false);
-        setActivityNumber(0);
-      }
-
-      const tick = () => {
-        if (isSpotify) getMusicProgress(data?.spotify);
-        else if (isActivity)
-          getElapsedTime(data?.activities[activityNumber].timestamps.start);
-        else if (!isActivity) localTime();
-      };
-
-      const getMusicProgress = (spotify: Spotify) => {
-        let spotifyTotal =
-          spotify?.timestamps?.end - spotify?.timestamps?.start;
-        let progress =
-          100 -
-          (100 * (spotify?.timestamps?.end - new Date().getTime())) /
-            spotifyTotal;
-
-        setMusicDuration(
-          new Date(new Date().getTime() - spotify.timestamps.start)
-            .toISOString()
-            .slice(14, 19) +
-            " / " +
-            new Date(spotifyTotal).toISOString().slice(14, 19)
-        );
-
-        setMusicProgress(progress.toString());
-      };
-
-      if (data?.spotify) {
-        const { song, artist, album, album_art_url } = data?.spotify;
-
-        setActivity(song);
-        setDetails("by " + artist.replace(/;/g, ","));
-        setState(song === album ? "" : "from " + album);
-        setActivityImage(album_art_url);
-        setSongLink(`https://open.spotify.com/track/${data?.spotify.track_id}`);
-        setSmallImage("");
-        tick();
-      } else if (isActivity) {
-        const { name, details, state, assets } =
-          data?.activities[activityNumber];
-
-        setActivity(name);
-        setDetails(details);
-        setState(state);
-        setActivityImage(
-          assets
-            ? `https://cdn.discordapp.com/app-assets/${data?.activities[activityNumber].application_id}/${data?.activities[activityNumber].assets.large_image}.webp?size=512`
-            : images[name] || "/question_mark.png"
-        );
-        if (assets && assets.small_image) {
-          setSmallImage(
-            `https://cdn.discordapp.com/app-assets/${data?.activities[activityNumber].application_id}/${data?.activities[activityNumber].assets.small_image}.webp?size=512`
+        if (opcode === 1) {
+          setPulse(data.heartbeat_interval);
+          lanyard.send(
+            JSON.stringify({
+              op: 2,
+              d: { subscribe_to_id: user.id },
+            })
           );
-        } else {
-          setSmallImage("");
         }
-        tick();
-      } else if (!isActivity) {
-        setActivity(`@${user.username}`);
-        setDetails(
-          data?.discord_status === "dnd"
-            ? "Do Not Disturb"
-            : data?.discord_status
-        );
-        setActivityImage(
-          `https://cdn.discordapp.com/avatars/${user.id}/${data?.discord_user.avatar}.png?size=512`
-        );
-        setSmallImage("");
-        tick();
-      }
-    };
-    fetchDcData();
-  }, [activityNumber, customStatus, images, isActivity, isSpotify]);
 
-  if (!isMounted) return null;
+        const tick = () => {
+          if (isSpotify) getMusicProgress(data.spotify);
+          else if (isActivity)
+            getElapsedTime(data.activities[activityNumber].timestamps.start);
+          else if (!isActivity) localTime();
+          setCurrentRequestAnimationFrame(requestAnimationFrame(tick));
+        };
+
+        // keep the websocket connection alive
+        setInterval(() => {
+          lanyard.send(JSON.stringify({ op: 3 }));
+        }, pulse);
+
+        if (opcode === 0) {
+          setActivityImage(
+            `https://cdn.discordapp.com/avatars/${user.id}/${data?.discord_user.avatar}.png?size=512`
+          );
+
+          setIsSpotify(data.listening_to_spotify);
+          setIsActivity(!!data.activities[0]);
+
+          // if (data?.activities[0]?.name === "Custom Status") {
+          //   setCustomStatus(
+          //     `${data?.activities[0]?.emoji?.name} ${data?.activities[0]?.state}`
+          //   );
+          // } else setCustomStatus("");
+
+          // if (customStatus && data.activities[1]) {
+          //   setIsActivity(true);
+          //   setActivityNumber(1);
+          // } else {
+          //   setIsActivity(false);
+          //   setActivityNumber(0);
+          // }
+
+          console.log(activityNumber);
+
+          if (isSpotify) {
+            const { song, artist, album, album_art_url } = data?.spotify;
+
+            setActivity(song);
+            setDetails("by " + artist.replace(/;/g, ","));
+            setState(song === album ? "" : "from " + album);
+            setActivityImage(album_art_url);
+            setSongLink(
+              `https://open.spotify.com/track/${data?.spotify.track_id}`
+            );
+            setSmallImage("");
+            tick();
+          } else if (isActivity) {
+            const { name, details, state, assets } =
+              data?.activities[activityNumber];
+
+            setActivity(name);
+            setDetails(details);
+            setState(state);
+            setActivityImage(
+              assets
+                ? `https://cdn.discordapp.com/app-assets/${data?.activities[activityNumber].application_id}/${data?.activities[activityNumber].assets.large_image}.webp?size=512`
+                : images[name] || "/question_mark.png"
+            );
+            if (assets && assets.small_image) {
+              setSmallImage(
+                `https://cdn.discordapp.com/app-assets/${data?.activities[activityNumber].application_id}/${data?.activities[activityNumber].assets.small_image}.webp?size=512`
+              );
+            } else {
+              setSmallImage("");
+            }
+            tick();
+          } else if (!isActivity) {
+            setActivity(`@${user.username}`);
+            setDetails(
+              data?.discord_status === "dnd"
+                ? "Do Not Disturb"
+                : data?.discord_status
+            );
+            setActivityImage(
+              `https://cdn.discordapp.com/avatars/${user.id}/${data?.discord_user.avatar}.png?size=512`
+            );
+            setSmallImage("");
+            tick();
+          }
+        }
+
+        // re-open websocket connection when it closes, e.g. when switched out of tab
+        lanyard.onclose = () => {
+          lanyard.close();
+          setTimeout(() => connect(), 2500);
+        };
+      };
+    }
+    connect();
+  }, []);
 
   return (
     <div>
