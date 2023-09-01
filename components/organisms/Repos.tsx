@@ -42,7 +42,7 @@ const Repos: React.FC = () => {
                 forks,
               }) => (
                 <Link
-                  className="no-underline text-white h-full rounded-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow"
+                  className="no-underline text-white h-full rounded-[8px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow ring-1 ring-transparent transition duration-500"
                   href={link}
                   key={link}
                   target="_blank"

@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
           <div className="mt-4 mb-[1.7rem]">
             <Socials />
           </div>
-          <Link className="outline-none" href="#work">
+          <Link tabIndex={-1} className="outline-none" href="#work">
             <Button>Discover my work ↓</Button>
           </Link>
         </div>

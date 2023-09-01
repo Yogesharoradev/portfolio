@@ -14,7 +14,7 @@ const Nav: React.FC<NavProps> = ({ href, section, isSelected }) => {
     <Link
       href={href}
       className={cn(
-        "no-underline list-none font-jetbrains rounded-[100px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow active:scale-95"
+        "no-underline list-none font-jetbrains rounded-[100px] focus-visible:outline-none ring-1 ring-transparent transition duration-500 focus-visible:ring-2 focus-visible:ring-yellow active:scale-95"
       )}
     >
       <div
