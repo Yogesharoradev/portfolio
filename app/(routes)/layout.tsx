@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import Cursor from "@/components/atoms/Cursor";
+import ResumeButton from "@/components/atoms/ResumeButton";
 import NavHost from "@/components/molecules/NavHost";
 
 export default function PageLayout({
@@ -47,12 +48,13 @@ export default function PageLayout({
 
   return (
     <html lang="en">
-      <body className="font-spacegrotesk">
+      <body className="font-spacegrotesk relative">
         <div
           onMouseMove={onMouseMove}
           onMouseDown={() => setScale(1.25)}
           onMouseUp={() => setScale(1)}
         >
+          <ResumeButton />
           <audio ref={audioRef!} src="/sounds/click.mp3" />
           <NavHost />
           <Cursor

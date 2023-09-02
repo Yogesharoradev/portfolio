@@ -115,8 +115,8 @@ const RichPresence: React.FC = () => {
       setSmallImage("");
       tick();
     } else if (isActivity) {
-      const { name, details, state, assets } =
-        data?.activities[activityNumber]!;
+      if (!data?.activities[activityNumber]) return;
+      const { name, details, state, assets } = data?.activities[activityNumber];
       setActivity(name);
       setDetails(details!);
       setState(state);

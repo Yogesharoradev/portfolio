@@ -114,6 +114,9 @@
   .repo_card {
     @apply py-4 px-6 bg-neutral_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-neutral_four hover:translate-y-[-2px] repo_shadow;
   }
+  .timeline_card {
+    @apply flex items-center space-x-3 bg-neutral_two bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-neutral_four rounded-lg;
+  }
 }
 
 * {
