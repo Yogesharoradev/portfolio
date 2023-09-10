@@ -1,6 +1,5 @@
 import Social from "@/components/atoms/Social";
 import { user } from "@/lib/utils";
-import React from "react";
 
 const Socials: React.FC = () => {
   return (

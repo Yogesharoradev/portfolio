@@ -1,9 +1,4 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-
 import { cn } from "@/lib/utils";
-
 interface TooltipProps {
   tip: string;
   active?: boolean;
@@ -11,15 +6,9 @@ interface TooltipProps {
 }
 
 const Tooltip: React.FC<TooltipProps> = ({ tip, active, children }) => {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => setIsMounted(true), []);
-
-  if (!isMounted) return null;
-
   return (
     <div className="relative inline-block group">
-      <span
+      <p
         style={{
           transition:
             "opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, margin-top 0.2s ease-in-out",
@@ -32,8 +21,8 @@ const Tooltip: React.FC<TooltipProps> = ({ tip, active, children }) => {
         )}
       >
         {tip}
-      </span>
-      <span className="tooltip-slot">{children}</span>
+      </p>
+      {children}
     </div>
   );
 };
