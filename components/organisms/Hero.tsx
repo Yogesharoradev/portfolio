@@ -19,8 +19,9 @@ const Hero: React.FC = () => {
             Hemant
           </h1>
           <h4 className="mt-4 text-[22px] md:text-[26px]">
-            Hobbyist coder and developer.
-            <br className="hidden md:block" /> Attempting to design.
+            Innovative Frontend Wizard.
+            <br className="hidden md:block" /> Transforming Designs into
+            Reality.
           </h4>
           <div className="mt-4 mb-[1.7rem]">
             <Socials />
