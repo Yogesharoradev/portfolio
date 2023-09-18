@@ -36,7 +36,9 @@ const RichPresence: React.FC = () => {
   };
 
   const localTime = () =>
-    setTimeCurr(new Date().toLocaleTimeString("en-US", { timeZone: "IST" }));
+    setTimeCurr(
+      new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+    );
 
   useEffect(() => {
     const interval = setInterval(() => localTime(), 1000);
@@ -60,13 +62,13 @@ const RichPresence: React.FC = () => {
     let progress =
       100 -
       (100 * (spotify?.timestamps?.end - new Date().getTime())) / spotifyTotal;
-    setMusicDuration(
-      new Date(new Date().getTime() - spotify.timestamps.start)
-        .toISOString()
-        .slice(14, 19) +
-        " / " +
-        new Date(spotifyTotal).toISOString().slice(14, 19)
-    );
+    // setMusicDuration(
+    //   new Date(new Date().getTime() - spotify.timestamps.start)
+    //     .toISOString()
+    //     .slice(14, 19) +
+    //     " / " +
+    //     new Date(spotifyTotal).toISOString().slice(14, 19)
+    // );
     setMusicProgress(progress.toString());
   };
 
@@ -194,9 +196,9 @@ const RichPresence: React.FC = () => {
           ) : (
             <h3 className="font-spacegrotesk ">{activity}</h3>
           )}
-          <h5 className="hidden md:block">
+          {/* <h5 className="hidden md:block">
             {(!isSpotify && !isActivity && customStatus) || ""}
-          </h5>
+          </h5> */}
           <h5 className="">
             {details
               ? details.length > 28
@@ -209,7 +211,7 @@ const RichPresence: React.FC = () => {
           {isSpotify ? (
             <>
               <progress className="" max="100" value={musicProgress} />
-              <h5>{musicDuration || ""}</h5>
+              {/* <h5>{musicDuration || ""}</h5> */}
             </>
           ) : isActivity ? (
             <h5>{elapsedTime}</h5>

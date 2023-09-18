@@ -36,8 +36,8 @@ const NavHost: React.FC = () => {
       >
         <div className="flex gap-[2vw] md:gap-16 justify-evenly md:justify-center">
           <Nav href="#home" section="/" isSelected={y < 350} />
-          <Nav href="#about" section="about" isSelected={y > 350 && y < 675} />
-          <Nav href="#work" section="work" isSelected={y > 675} />
+          <Nav href="#about" section="about" isSelected={y > 350 && y < 650} />
+          <Nav href="#work" section="work" isSelected={y > 650} />
         </div>
       </div>
     </nav>

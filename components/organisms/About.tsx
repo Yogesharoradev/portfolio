@@ -39,11 +39,13 @@ const About: React.FC = () => {
             "
       >
         <h2 className="md:hidden mb-4 md:mt-4 md:mb-0">bio</h2>
-        <p>
+        <div className="text-white_two font-[300] text-[1.1rem] tracking-[-0rem] leading-[1.75rem]">
           Hey there, I&rsquo;m Hemant! :] I&rsquo;m a{" "}
-          <Tooltip tip={age!}>
-            <span className="bio_span">{Math.floor(Number(age))}</span>
-          </Tooltip>{" "}
+          {age && (
+            <Tooltip tip={age}>
+              <span className="bio_span">{Math.floor(Number(age))}</span>
+            </Tooltip>
+          )}{" "}
           year old frontend developer and freelancer based in India. I&rsquo;ve
           taken coding seriously since <span className="bio_span">2021</span>,
           and have been freelancing since <span className="bio_span">2022</span>
@@ -61,7 +63,7 @@ const About: React.FC = () => {
           </Tooltip>{" "}
           as a web developer, which is probably the reason why you&rsquo;ve
           ended up here. Currently struggling with Prisma and Typescript.
-        </p>
+        </div>
       </div>
     </section>
   );
