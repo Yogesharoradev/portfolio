@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
 import Nav from "../atoms/Nav";
 
 const NavHost: React.FC = () => {
@@ -13,7 +14,6 @@ const NavHost: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleNavigation);
-
     return () => {
       window.removeEventListener("scroll", handleNavigation);
     };
@@ -35,9 +35,9 @@ const NavHost: React.FC = () => {
         }}
       >
         <div className="flex gap-[2vw] md:gap-16 justify-evenly md:justify-center">
-          <Nav href="#home" section="/" isSelected={y < 350} />
-          <Nav href="#about" section="about" isSelected={y > 350 && y < 650} />
-          <Nav href="#work" section="work" isSelected={y > 650} />
+          <Nav href="#home" section="/" isSelected={y < 300} />
+          <Nav href="#about" section="about" isSelected={y > 300 && y < 550} />
+          <Nav href="#work" section="work" isSelected={y > 550} />
         </div>
       </div>
     </nav>

@@ -12,7 +12,7 @@ const Repos: React.FC = () => {
   useEffect(() => {
     const fetchRepos = async () => {
       const response = await fetch(
-        "https://gh-pinned-repos.egoist.dev/?username=hemantwasthere"
+        "https://gh-pinned-repos-tsj7ta5xfhep.deno.dev/?username=hemantwasthere"
       );
       setRepos(await response.json());
     };
@@ -60,12 +60,14 @@ const Repos: React.FC = () => {
                         <Image
                           width={16}
                           height={16}
-                          src={`https://github.com/${owner}.png`}
+                          src={`https://github.com/${owner.split("/")[0]}.png`}
                           alt="{owner}'s profile picture"
                           id="pfp"
                           className="rounded-[50%]"
                         />
-                        <h6 className="font-jetbrains">{owner}</h6>
+                        <h6 className="font-jetbrains">
+                          {owner.split("/")[0]}
+                        </h6>
                       </div>
                       <div>
                         <Image
