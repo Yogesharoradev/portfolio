@@ -155,8 +155,8 @@ const RichPresence: React.FC = () => {
   return (
     <div>
       <h2 className="md:hidden">activity</h2>
-      <div className="flex gap-9 items-center font-jetbrains">
-        <div className="mt-1 relative w-[100px] h-[100px] md:w-[135px] md:h-[135px]">
+      <div className=" gap-9 items-center font-jetbrains grid grid-cols-12">
+        <div className="mt-1 relative w-[100px] h-[100px] md:w-[135px] md:h-[135px] col-span-4">
           <Image
             src={activityImage}
             alt={activity}
@@ -180,7 +180,7 @@ const RichPresence: React.FC = () => {
           )}
         </div>
 
-        <div>
+        <div className="col-span-6 sm:col-span-8">
           {isSpotify ? (
             <Link
               className="rounded-[4px] py-2 underline decoration-bg_color hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow"
