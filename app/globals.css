@@ -325,26 +325,6 @@ progress {
     }
 } */
 
-/*-----scrollbar-----*/
-/* Firefox */
-* {
-  scrollbar-width: 11px;
-  scrollbar-color: #1e1a1a #211c1c;
-}
-
-::-webkit-scrollbar {
-  width: 11px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1e1a1a;
-  background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #211c1c;
-}
-
 .webkit_text_stroke::before {
   -webkit-text-stroke: 2px #eed1c7;
   color: transparent;
@@ -388,4 +368,20 @@ progress {
   100% {
     background-position: 1200px 0;
   }
+}
+
+/*-----scrollbar-----*/
+
+::-webkit-scrollbar {
+  width: 11px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--elevation-three);
+  background-clip: content-box;
+}
+
+::-webkit-slider-thumb:hover {
+  background-color: var(--elevation-one);
 }

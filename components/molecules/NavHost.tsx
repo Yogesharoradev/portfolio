@@ -20,10 +20,10 @@ const NavHost: React.FC = () => {
   }, []);
 
   return (
-    <nav className="flex items-center justify-center bg-bg_color">
+    <nav className="flex items-center justify-center">
       <div
         className={cn(
-          "bottom-0 top-auto p-0 bg-[#1a1616] w-full md:w-[40rem] rounded-[12px] text-center items-center fixed md:top-0 md:bottom-auto md:py-5 z-[15] md:bg-bg_color",
+          "bottom-0 top-auto p-0 bg-elevation_one w-full md:w-[40rem] rounded-[12px] text-center items-center fixed md:top-0 md:bottom-auto md:py-5 z-[15] md:bg-bg_color",
           {
             "md:border-none md:border-b-accent_opacity": y < 20,
             "md:border-b-[1.5px] md:border-b-accent_opacity md:py-2 md:mt-2 md:w-[34rem] md:bg-elevation_five md:backdrop-blur-[15px] webkit_backdrop_filter_15px":

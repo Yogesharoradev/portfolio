@@ -14,19 +14,21 @@ const Supporters: React.FC = () => {
 
       <div className="flex flex-wrap justify-start gap-8 mb-12 md:justify-center">
         {supporters.map(({ name, icon, href, message }) => (
-          <div className="flex flex-col items-center gap-2" key={name}>
+          <div key={name}>
             <Tooltip tip={message}>
-              <Link href={href} className="offset_ring rounded-full">
-                <Image
-                  src={icon}
-                  alt={name}
-                  width={64}
-                  height={64}
-                  className="rounded-full"
-                />
-              </Link>
+              <div className="flex flex-col items-center gap-2">
+                <Link href={href} className="offset_ring rounded-full">
+                  <Image
+                    src={icon}
+                    alt={name}
+                    width={64}
+                    height={64}
+                    className="rounded-full"
+                  />
+                </Link>
+                <h6>{name}</h6>
+              </div>
             </Tooltip>
-            <h6>{name}</h6>
           </div>
         ))}
       </div>
