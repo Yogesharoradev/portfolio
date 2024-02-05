@@ -29,7 +29,7 @@ export default function Timeline({ timeline: rawTimeline }: TimelineProps) {
       <div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-2xl w-full mx-auto px-0 sm:px-16">
         <div className="title flex justify-start mt-0 md:justify-center">
           <h2 className="inline-block mb-4">
-            <span className="text-yellow">Time</span>line
+            <span className="text-accent">Time</span>line
           </h2>
         </div>
         <ul className="-mb-8" role="list">
@@ -40,7 +40,7 @@ export default function Timeline({ timeline: rawTimeline }: TimelineProps) {
                   {index !== timeline.length - 1 && (
                     <span
                       aria-hidden="true"
-                      className="absolute top-1 left-1/2 w-0.5 h-full -ml-px bg-neutral_three"
+                      className="absolute top-1 left-1/2 w-0.5 h-full -ml-px bg-elevation_three"
                     />
                   )}
                   <div className="timeline_card relative">
@@ -51,7 +51,7 @@ export default function Timeline({ timeline: rawTimeline }: TimelineProps) {
                       />
                     </div>
                     <div className="min-w-0">
-                      <h1 className="flex flex-wrap justify-between mb-2 text-gray-500 dark:text-white text-lg tracking-tight font-bold">
+                      <h1 className="flex flex-wrap justify-between mb-2 text-gray-500 dark:text-text_primary text-lg tracking-tight font-bold">
                         <span>{title}</span>
                         <span className="flex-1 sm:hidden" />
                         <p className="bio_span">{format(date, "PPP")}</p>
@@ -61,7 +61,7 @@ export default function Timeline({ timeline: rawTimeline }: TimelineProps) {
                       </p>
                       {link && (
                         <Link
-                          className="mt-2 flex items-center gap-2 text-yellow border-2 border-yellow/5 w-fit px-3 py-1 rounded-lg hover:border-yellow transition-all duration-300 outline-none "
+                          className="mt-2 flex items-center gap-2 text-accent border-2 border-accent/5 w-fit px-3 py-1 rounded-lg hover:border-accent transition-all duration-300 outline-none "
                           href={link.url}
                           rel="noopener noreferrer"
                           target="_blank"

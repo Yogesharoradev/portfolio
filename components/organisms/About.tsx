@@ -39,7 +39,7 @@ const About: React.FC = () => {
             "
       >
         <h2 className="md:hidden mb-4 md:mt-4 md:mb-0">bio</h2>
-        <div className="text-white_two font-[300] text-[1.1rem] tracking-[-0rem] leading-[1.75rem]">
+        <div className="text-text_secondary font-[300] text-[1.1rem] tracking-[-0rem] leading-[1.75rem]">
           Hey there, I&rsquo;m Hemant! :] I&rsquo;m a{" "}
           {age && (
             <Tooltip tip={age}>

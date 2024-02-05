@@ -23,7 +23,7 @@ const Repos: React.FC = () => {
     <section className="wrapper pb-5 md:pb-0" id="work">
       <div className="title flex justify-start mt-0 md:justify-center">
         <h2 className="inline-block mb-4">
-          <span className="text-yellow">code</span>:work
+          <span className="text-accent">code</span>:work
         </h2>
       </div>
 
@@ -42,7 +42,7 @@ const Repos: React.FC = () => {
                 forks,
               }) => (
                 <Link
-                  className="no-underline text-white h-full rounded-[8px] offset_ring"
+                  className="no-underline text-text_primary h-full rounded-[8px] offset_ring"
                   href={link}
                   key={link}
                   target="_blank"
@@ -87,7 +87,7 @@ const Repos: React.FC = () => {
                     <div className="flex items-center gap-4">
                       <div className="info flex gap-[.2rem] items-center">
                         <span
-                          className="dot h-[11px] w-[11px] rounded-[50%] inline-block text-yellow"
+                          className="dot h-[11px] w-[11px] rounded-[50%] inline-block text-accent"
                           style={{ backgroundColor: languageColor }}
                         />
                         <h6 className="font-jetbrains">{language}</h6>

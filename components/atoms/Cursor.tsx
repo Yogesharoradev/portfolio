@@ -8,7 +8,7 @@ interface CursorProps {
 const Cursor: React.FC<CursorProps> = ({ mouseX, mouseY, scale, opacity }) => {
   return (
     <div
-      className="fixed left-0 top-0 h-[30px] w-[30px] rounded-full border border-white_two z-30 pointer-events-none"
+      className="fixed left-0 top-0 h-[30px] w-[30px] rounded-full border border-text_secondary z-30 pointer-events-none"
       style={{
         transform: `translateX(${mouseX - 15}px) translateY(${
           mouseY - 15

@@ -100,19 +100,19 @@
 
 @layer utilities {
   .bio_span {
-    @apply font-normal font-jetbrains text-[.9rem] bg-neutral_one rounded-[7px] text-yellow py-[.2rem] px-[.5rem] w-fit;
+    @apply font-normal font-jetbrains text-[.9rem] bg-elevation_one rounded-[7px] text-accent py-[.2rem] px-[.5rem] w-fit;
   }
   .repo_card {
-    @apply py-4 px-6 bg-neutral_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-neutral_four hover:translate-y-[-2px] repo_shadow;
+    @apply py-4 px-6 bg-elevation_two rounded-[8px] min-h-[140px] h-full flex flex-col gap-[.25rem] justify-between backdrop-blur-sm bg-blend-overlay border border-elevation_four hover:translate-y-[-2px] repo_shadow;
   }
   .timeline_card {
-    @apply flex items-center space-x-3 bg-neutral_two bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-neutral_four rounded-lg;
+    @apply flex items-center space-x-3 bg-elevation_two bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-elevation_four rounded-lg;
   }
 }
 
 @layer components {
   .offset_ring {
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow ring-1 ring-transparent transition duration-500;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ring-1 ring-transparent transition duration-500;
   }
 }
 
@@ -166,16 +166,17 @@ body.stop-transitions * {
 }
 
 :root {
-  --white: #eed1c7;
-  --white-two: hsl(0, 17%, 69%);
-  --yellow: #dba895;
-  --yellow-opacity: #dba8952a;
-  --bg-color: hsl(0, 11%, 8%);
-  --neutral-one: #211c1c;
-  --neutral-two: #211c1c75;
-  --neutral-three: #1e1a1a;
-  --neutral-four: rgba(123, 115, 115, 0.227);
-  --neutral-five: #1f1919ca;
+  --text-primary: #eed1c7;
+  --text-secondary: #bda3a3;
+  --accent: #dba895;
+  --accent-opacity: #dba8952a;
+  --bg-color: #171212;
+  --elevation-one: #211c1c;
+  --elevation-two: #211c1c75;
+  --elevation-three: #1e1a1a;
+  --elevation-four: #7b73733a;
+  --elevation-five: #1f1919ca;
+  --elevation-six: #0a0808bb;
 
   --font-one: "Space_Grotesk", sans-serif;
   --font-two: "JetBrains_Mono", monospace;
@@ -183,12 +184,12 @@ body.stop-transitions * {
 }
 
 ::selection {
-  background: var(--yellow-opacity);
+  background: var(--accent-opacity);
 }
 
 /*-----headings-----*/
 h1 {
-  color: var(--white);
+  color: var(--text-primary);
   font-weight: 600;
   letter-spacing: -0.075em;
   line-height: 0.05rem;
@@ -197,7 +198,7 @@ h1 {
 }
 
 h2 {
-  color: var(--white);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 2.25rem;
   border-radius: 12px;
@@ -206,19 +207,19 @@ h2 {
 }
 
 h3 {
-  color: var(--white);
+  color: var(--text-primary);
   font-weight: 500;
   font-size: 1.4rem;
 }
 
 h4 {
-  color: var(--white-two);
+  color: var(--text-secondary);
   font-weight: 300;
   font-size: 1.6rem;
 }
 
 h5 {
-  color: var(--white-two);
+  color: var(--text-secondary);
   font-size: 1.15rem;
   /* font-family: var(--font-two); */
   font-weight: 300;
@@ -226,7 +227,7 @@ h5 {
 }
 
 h6 {
-  color: var(--white-two);
+  color: var(--text-secondary);
   font-size: 0.9rem;
   /* font-family: var(--font-two); */
   font-weight: 300;
@@ -234,7 +235,7 @@ h6 {
 }
 
 p {
-  color: var(--white-two);
+  color: var(--text-secondary);
   font-weight: 300;
   font-size: 1.1rem;
   letter-spacing: -0rem;
@@ -297,23 +298,23 @@ progress {
   border-radius: 10rem;
   margin: 0;
   margin-top: 0.6rem;
-  background-color: var(--neutral-one);
+  background-color: var(--elevation-one);
   height: 0.6rem;
   overflow: hidden;
 
   &::-webkit-progress-bar {
-    background-color: var(--neutral-one);
+    background-color: var(--elevation-one);
     border-radius: 10rem;
   }
 
   /* dont ask me why these have to be duplicated because idk either */
   &[value]::-webkit-progress-value {
-    background-color: var(--yellow);
+    background-color: var(--accent);
     border-radius: 10rem;
   }
 
   &[value]::-moz-progress-bar {
-    background-color: var(--yellow);
+    background-color: var(--accent);
     border-radius: 10rem;
   }
 }
@@ -373,9 +374,9 @@ progress {
   background: #ddd;
   background: linear-gradient(
     to right,
-    var(--neutral-two) 8%,
-    var(--neutral-one) 18%,
-    var(--neutral-two) 33%
+    var(--elevation-two) 8%,
+    var(--elevation-one) 18%,
+    var(--elevation-two) 33%
   );
   background-size: 1200px 100%;
 }
