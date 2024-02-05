@@ -7,12 +7,12 @@ import React, { useEffect, useRef, useState } from "react";
 import Tooltip from "@/components/atoms/Tooltip";
 
 interface SocialProps {
-  icon: string;
   tip: string;
   link: string;
+  children: React.ReactNode;
 }
 
-const Social: React.FC<SocialProps> = ({ icon, tip, link }) => {
+const Social: React.FC<SocialProps> = ({ tip, link, children }) => {
   const [active, setActive] = useState(false);
   const ref = useRef(null);
 
@@ -42,13 +42,7 @@ const Social: React.FC<SocialProps> = ({ icon, tip, link }) => {
           rel="noreferrer"
           ref={ref}
         >
-          <Image
-            className="opacity-70 transition-all group-hover:opacity-100"
-            width={26}
-            height={26}
-            src={`/icons/${icon}.svg`}
-            alt={icon}
-          />
+          {children}
         </Link>
       </div>
     </Tooltip>

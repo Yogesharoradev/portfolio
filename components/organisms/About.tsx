@@ -62,7 +62,7 @@ const About: React.FC = () => {
             </Link>
           </Tooltip>{" "}
           as a web developer, which is probably the reason why you&rsquo;ve
-          ended up here. Currently struggling with Prisma and Typescript.
+          ended up here. Currently struggling with blockchain and rust.
         </div>
       </div>
     </section>
