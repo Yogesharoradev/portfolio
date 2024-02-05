@@ -53,7 +53,7 @@ const About: React.FC = () => {
           community. I like contributing to{" "}
           <Tooltip tip="🤓">
             <Link
-              className="no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow ring-1 ring-transparent transition duration-500 rounded-[7px]"
+              className="no-underline offset_ring rounded-[7px]"
               href="https://github.com/hemantwasthere"
               target="_blank"
               rel="noreferrer"

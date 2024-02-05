@@ -183,7 +183,7 @@ const RichPresence: React.FC = () => {
         <div className="col-span-6 sm:col-span-8">
           {isSpotify ? (
             <Link
-              className="rounded-[4px] py-2 underline decoration-bg_color hover:decoration-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow"
+              className="rounded-[4px] py-2 underline decoration-bg_color hover:decoration-white offset_ring"
               href={songLink}
               target="_blank"
               rel="noreferrer"
