@@ -3,7 +3,7 @@ import Artwork from "../atoms/Artwork";
 const ArtGrid = () => {
   return (
     <div className="grid-container">
-      <div className="grid">
+      {/* <div className="grid">
         <Artwork art="painted_red" tall />
         <Artwork art="drowning" />
         <Artwork art="BL1NG!" tall />
@@ -20,7 +20,7 @@ const ArtGrid = () => {
         <Artwork art="ribbons" tall />
         <Artwork art="asumi" />
         <Artwork art="doodle" />
-      </div>
+      </div> */}
     </div>
   );
 };
