@@ -1,5 +1,6 @@
 "use client";
 
+import { easeIn, easeInOut, motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -49,15 +50,17 @@ const Blogwork: React.FC<BlogworkProps> = ({
       </Head>
 
       {clicked && (
-        <div
+        <motion.div
           className="blog_img_modal bg-blend-overlay flex flex-col justify-center items-center fixed text-center left-0 top-[50%] h-[200vh] w-[100vw] z-20 cursor-pointer select-none bg-elevation_six backdrop-blur-[12px]"
           tabIndex={0}
           onClick={() => setClicked(false)}
           onKeyDown={() => setClicked(false)}
           onContextMenu={disableRightClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
           role="button"
-          //   in:fly={{ y: 50, easing: quintOut, duration: 750 }}
-          //   out:fly={{ y: 50, easing: cubicOut, duration: 300 }}
         >
           <h3 className="m-[1vh] text-[3.5vh] font-[500] text-text_primary">
             {blog}
@@ -73,12 +76,12 @@ const Blogwork: React.FC<BlogworkProps> = ({
           </div>
 
           <h6 className="m-[1vh] text-[2vh] mt-[2vh]">{subtitle}</h6>
-        </div>
+        </motion.div>
       )}
 
       <button
         className={cn(
-          "relative border-none p-0 h-full w-full rounded-none md:rounded-[4px] overflow-hidden bg-elevation_one transition-[all_0.3s_var(--bezier-one)] cursor-pointer select-none bg-cover bg-no-repeat bg-center blog_card offset_ring",
+          "relative border-none p-0 h-full w-full rounded-none md:rounded-[4px] overflow-hidden bg-elevation_one transition-[all_0.3s_var(--bezier-one)] cursor-pointer select-none bg-cover bg-no-repeat bg-center blog_card focus-within:offset_ring",
           {
             blog_tall: tall,
             blog_shrink: shrink,
