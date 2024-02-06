@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { Repo } from "@/types";
-import Image from "next/image";
-import Link from "next/link";
 
 const Repos: React.FC = () => {
   const [repos, setRepos] = useState<Repo[]>([]);
@@ -70,14 +70,29 @@ const Repos: React.FC = () => {
                         </h6>
                       </div>
                       <div>
-                        <Image
-                          width={20}
-                          height={20}
-                          src="icons/open.svg"
-                          alt="open in new tab"
+                        <svg
+                          width="24px"
+                          height="24px"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
                           id="open"
-                          className="h-[20px] transition-[filter_.3s_var(--bezier-one)] group-hover:brightness-[1.3]"
-                        />
+                          className="open_new_window_icon h-[20px] transition-[filter_.3s_var(--bezier-one)] group-hover:brightness-[1.3]"
+                        >
+                          <path
+                            d="M21 3h-6m6 0l-9 9m9-9v6"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M21 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h6"
+                            stroke="#BDA3A2"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          ></path>
+                        </svg>
                       </div>
                     </div>
                     <div>

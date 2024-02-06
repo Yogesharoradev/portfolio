@@ -1,5 +1,6 @@
 import Footer from "@/components/molecules/Footer";
 import About from "@/components/organisms/About";
+import Art from "@/components/organisms/Art";
 import Hero from "@/components/organisms/Hero";
 import Repos from "@/components/organisms/Repos";
 import Supporters from "@/components/organisms/Supporters";
@@ -11,6 +12,7 @@ export default function Home() {
     <div className="">
       <Hero />
       <About />
+      {/* <Art /> */}
       <Repos />
       <Supporters />
       <Footer />

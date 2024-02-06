@@ -349,6 +349,10 @@ progress {
   stroke: var(--accent);
 }
 
+.open_new_window_icon > path {
+  stroke: var(--text-secondary);
+}
+
 .webkit_text_stroke::before {
   -webkit-text-stroke: 2px var(--text-primary);
   color: transparent;
