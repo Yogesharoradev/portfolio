@@ -78,7 +78,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
           <Link
             href={link}
             target="_blank"
-            className="m-[1vh] text-[2vh] mt-[2vh] flex items-center gap-2 text-text_secondary group"
+            className="offset_ring rounded-md m-[1vh] text-[2vh] mt-[2vh] flex items-center gap-2 text-text_secondary group"
           >
             {subtitle}
             <svg
