@@ -9,22 +9,64 @@ const BlogGrid = () => {
           gridAutoRows: "230px",
         }}
       >
-        <Blogwork blog="painted_red" tall />
-        <Blogwork blog="drowning" />
-        <Blogwork blog="BL1NG!" tall />
-        <Blogwork blog="811" />
-        <Blogwork blog="FADE" tall subtitle="Acrylic Paint" />
-        <Blogwork blog="diverge" tall />
         <Blogwork
-          blog="flandre"
+          blog="zoro"
+          tall
+          subtitle="docker networking"
+          link="https://blog.hemant.social/docker"
+        />
+        <Blogwork
+          blog="hisoka"
+          subtitle="graphql"
+          link="https://blog.hemant.social/graphql"
+        />
+        <Blogwork
+          blog="gojo"
+          tall
+          subtitle="kafka"
+          link="https://blog.hemant.social/kafka"
+        />
+        <Blogwork
+          blog="kakashi"
+          subtitle="whisper"
+          link="https://blog.hemant.social/whisper"
+        />
+        <Blogwork
+          blog="killua"
+          tall
+          subtitle="cloudflare"
+          link="https://blog.hemant.social/cloudflare"
+        />
+        <Blogwork
+          blog="spidermon"
+          tall
+          subtitle="moving gradients"
+          link="https://blog.hemant.social/moving-gradients"
+        />
+        <Blogwork
+          blog="shanks"
           tall
           shrink
           commission
-          subtitle="Commissioned by Kevin T. · Do not use"
+          subtitle="grid"
+          link="https://blog.hemant.social/grid"
         />
-        <Blogwork blog="ribbons" tall />
-        <Blogwork blog="asumi" />
-        <Blogwork blog="doodle" />
+        <Blogwork
+          blog="nom"
+          tall
+          subtitle="zustand"
+          link="https://blog.hemant.social/zustand"
+        />
+        <Blogwork
+          blog="todu"
+          subtitle="dnd"
+          link="https://blog.hemant.social/drag-n-drop"
+        />
+        <Blogwork
+          blog="boo"
+          subtitle="evolution"
+          link="https://blog.hemant.social/evolution-of-frontend-development"
+        />
       </div>
     </div>
   );
