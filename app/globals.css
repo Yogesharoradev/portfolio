@@ -353,6 +353,46 @@ progress {
   stroke: var(--text-secondary);
 }
 
+.blog_grid {
+  grid-auto-rows: 230px;
+}
+
+@media screen and (max-width: 600px) {
+  .blog_grid {
+    grid-auto-rows: 125px;
+  }
+}
+
+.blog_img_modal {
+  transform: translateY(-50%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.blog_tall {
+  grid-row: span 2 / auto;
+}
+
+@media only screen and (max-width: 1153px) {
+  .blog_shrink {
+    grid-row: span 1 / auto;
+    background-position: top;
+  }
+}
+
+.blog_card {
+  -webkit-transform: translate3d(0, 0, 1px);
+  transform: translate3d(0, 0, 1px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.blog_card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
 .webkit_text_stroke::before {
   -webkit-text-stroke: 2px var(--text-primary);
   color: transparent;
