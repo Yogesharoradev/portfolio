@@ -71,7 +71,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
 
           <img
             className="max-h-[83vh] h-auto max-w-[86vw] rounded-[2vh] flex justify-center items-center"
-            src={`/blog/anime/${blog}.jpeg`}
+            src={`/blog/sketchy_anime/${blog}.jpeg`}
             alt={blog}
           />
 
@@ -117,7 +117,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
           }
         )}
         style={{
-          backgroundImage: `url(blog/anime/${blog}.jpeg`,
+          backgroundImage: `url(blog/sketchy_anime/${blog}.jpeg`,
         }}
         aria-label={blog}
         onClick={() => setClicked(true)}
