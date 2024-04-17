@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import React, { useEffect, useRef, useState } from "react";
 
 import Tooltip from "@/components/atoms/Tooltip";
@@ -32,10 +32,22 @@ const Social: React.FC<SocialProps> = ({ tip, link, children }) => {
     };
   }, [active]);
 
+  const getIconName = () => {
+    if (link.includes("github")) return "github";
+    if (link.includes("discord")) return "discord";
+    if (link.includes("buymeacoffee")) return "kofi";
+    if (link.includes("hemant.is.there")) return "mail";
+  };
+
   return (
     <Tooltip tip={tip} active={active}>
       <div className="transition-all group">
         <Link
+          onClick={() => {
+            posthog.capture(`"${getIconName()}" icon clicked`, {
+              Clicked: true,
+            });
+          }}
           className="transition-all flex justify-center items-center w-[50px] h-[50px] bg-transparent border-none rounded-[10px] cursor-pointer group-hover:bg-elevation_one active:scale-[95%] offset_ring"
           href={link}
           target="_blank"

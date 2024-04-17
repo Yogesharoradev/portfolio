@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import supporters from "@/data/supporters.json";
 import Tooltip from "../atoms/Tooltip";
@@ -17,7 +20,15 @@ const Supporters: React.FC = () => {
           <div key={name}>
             <Tooltip tip={message}>
               <div className="flex flex-col items-center gap-2">
-                <Link href={href} className="offset_ring rounded-full">
+                <Link
+                  href={href}
+                  className="offset_ring rounded-full"
+                  onClick={() => {
+                    posthog.capture(`Supporter(${name}) link clicked`, {
+                      Clicked: true,
+                    });
+                  }}
+                >
                   <Image
                     src={icon}
                     alt={name}

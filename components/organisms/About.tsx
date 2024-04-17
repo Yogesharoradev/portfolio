@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Tooltip from "@/components/atoms/Tooltip";
 import Link from "next/link";
+import posthog from "posthog-js";
 import RichPresence from "../molecules/RichPresence";
 
 const About: React.FC = () => {
@@ -57,6 +58,11 @@ const About: React.FC = () => {
               href="https://github.com/hemantwasthere"
               target="_blank"
               rel="noreferrer"
+              onClick={() => {
+                posthog.capture('"open source" link clicked', {
+                  Clicked: true,
+                });
+              }}
             >
               <span className="bio_span">open source</span>
             </Link>

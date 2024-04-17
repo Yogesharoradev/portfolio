@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
+import posthog from "posthog-js";
 import React, { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -118,6 +119,11 @@ const Blogwork: React.FC<BlogworkProps> = ({
               href={link}
               target="_blank"
               className="offset_ring rounded-md m-[1vh] text-[2vh] mt-[2vh] flex items-center gap-2 text-text_secondary group hover:brightness-[1.3]"
+              onClick={() => {
+                posthog.capture(`Blogwork(${subtitle}) link clicked`, {
+                  Clicked: true,
+                });
+              }}
             >
               {subtitle}
               <svg

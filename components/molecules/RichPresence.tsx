@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { useEffect, useState } from "react";
 
 import Tooltip from "@/components/atoms/Tooltip";
@@ -188,6 +189,11 @@ const RichPresence: React.FC = () => {
               target="_blank"
               rel="noreferrer"
               style={{ transition: ".3s cubic-bezier(0.25, 0.46, 0.45, 0.94)" }}
+              onClick={() => {
+                posthog.capture("Spotify link clicked", {
+                  Clicked: true,
+                });
+              }}
             >
               <Tooltip tip="Open Spotify">
                 <h3 className="font-spacegrotesk ">{activity}</h3>

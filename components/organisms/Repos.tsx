@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import posthog from "posthog-js";
 import { useEffect, useState } from "react";
 
 import { Repo } from "@/types";
@@ -47,6 +48,11 @@ const Repos: React.FC = () => {
                   key={link}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => {
+                    posthog.capture(`Repo(${repo}) link clicked`, {
+                      Clicked: true,
+                    });
+                  }}
                 >
                   <div
                     className="repo_card group"

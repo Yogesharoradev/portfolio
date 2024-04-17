@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import posthog from "posthog-js";
 
 import Tooltip from "../atoms/Tooltip";
 import Socials from "./Socials";
@@ -22,6 +25,11 @@ const Footer: React.FC = () => {
               href="https://v1.hemant.lol"
               target="_blank"
               rel="noreferrer"
+              onClick={() => {
+                posthog.capture("Footer V1 link clicked", {
+                  Clicked: true,
+                });
+              }}
             >
               V1
             </Link>
