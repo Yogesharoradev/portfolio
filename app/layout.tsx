@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { PHProvider } from "@/providers/PHProvider";
+import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,10 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <PHProvider>
-        <body>{children}</body>
-      </PHProvider>
-    </html>
+    <PHProvider>
+      <html lang="en">
+        <body>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </PHProvider>
   );
 }

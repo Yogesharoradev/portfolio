@@ -19,6 +19,8 @@ module.exports = {
         elevation_four: "var(--elevation-four)",
         elevation_five: "var(--elevation-five)",
         elevation_six: "var(--elevation-six)",
+        bg_toggle_theme: "var(--bg-toggle-theme)",
+        border_toggle_theme: "var(--border-toggle-theme)",
       },
       fontSize: {
         clamp416: "clamp(4rem, 10vw, 6.25rem",
