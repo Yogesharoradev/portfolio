@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <PHProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
