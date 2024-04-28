@@ -182,9 +182,6 @@ body.stop-transitions * {
     --elevation-four: #d5c8bb;
     --elevation-five: #dfd8ccce;
     --elevation-six: #dbd4d09e;
-
-    --bg-toggle-theme: #ffeccf;
-    --border-toggle-theme: #ffbb52;
   }
 
   .dark {
@@ -203,9 +200,6 @@ body.stop-transitions * {
     --elevation-four: #7b73733a;
     --elevation-five: #1f1919ca;
     --elevation-six: #0a0808bb;
-
-    --bg-toggle-theme: #bc938c;
-    --border-toggle-theme: #845443;
   }
 }
 
