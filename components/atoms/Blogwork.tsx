@@ -24,7 +24,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
   tall = false,
   shrink = false,
   commission = false,
-  link = "https://blog.hemant.social",
+  link = "https://blog.hemant.lol",
 }) => {
   const [clicked, setClicked] = useState(false);
 

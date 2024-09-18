@@ -13,35 +13,35 @@ const BlogGrid = () => {
           blog="frost"
           tall
           subtitle="docker networking"
-          link="https://blog.hemant.social/docker"
+          link="https://blog.hemant.lol/docker"
         />
         <Blogwork
           blog="deep"
           subtitle="graphql"
-          link="https://blog.hemant.social/graphql"
+          link="https://blog.hemant.lol/graphql"
         />
         <Blogwork
           blog="rain"
           tall
           subtitle="kafka"
-          link="https://blog.hemant.social/kafka"
+          link="https://blog.hemant.lol/kafka"
         />
         <Blogwork
           blog="purp"
           subtitle="whisper"
-          link="https://blog.hemant.social/whisper"
+          link="https://blog.hemant.lol/whisper"
         />
         <Blogwork
           blog="makima"
           tall
           subtitle="cloudflare"
-          link="https://blog.hemant.social/cloudflare"
+          link="https://blog.hemant.lol/cloudflare"
         />
         <Blogwork
           blog="ghost"
           tall
           subtitle="moving gradients"
-          link="https://blog.hemant.social/moving-gradients"
+          link="https://blog.hemant.lol/moving-gradients"
         />
         <Blogwork
           blog="yoru"
@@ -49,23 +49,23 @@ const BlogGrid = () => {
           shrink
           commission
           subtitle="grid"
-          link="https://blog.hemant.social/grid"
+          link="https://blog.hemant.lol/grid"
         />
         <Blogwork
           blog="nisu"
           tall
           subtitle="zustand"
-          link="https://blog.hemant.social/zustand"
+          link="https://blog.hemant.lol/zustand"
         />
         <Blogwork
           blog="lost"
           subtitle="dnd"
-          link="https://blog.hemant.social/drag-n-drop"
+          link="https://blog.hemant.lol/drag-n-drop"
         />
         <Blogwork
           blog="momi"
           subtitle="evolution"
-          link="https://blog.hemant.social/evolution-of-frontend-development"
+          link="https://blog.hemant.lol/evolution-of-frontend-development"
         />
       </div>
     </div>
