@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       <div className="pb-[2.4rem] flex flex-col justify-between items-center md:flex-row">
         <Socials />
         <h6 className="text-center leading-10 mt-0 font-jetbrains">
-          Made with pain. &#60;3
+          Made by Yogesh. &#60;3
           <Tooltip tip="you're here">
             <span className="rounded-[7px] py-[0.15rem] px-[0.5rem] w-fit ml-4 mr-[0.4rem] font-jetbrains bg-elevation_one">
               V2

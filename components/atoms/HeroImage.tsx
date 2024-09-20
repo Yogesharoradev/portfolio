@@ -3,7 +3,11 @@
 import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
-const HeroImage: React.FC = () => {
+interface HeroImageProps {
+  imageUrl: string;
+}
+
+const HeroImage: React.FC<HeroImageProps> = ({ imageUrl }) => {
   const [zoom, setZoom] = useState<boolean>(false);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
 
@@ -29,14 +33,13 @@ const HeroImage: React.FC = () => {
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
         className={cn(
-          "img rounded-[48px] w-wclamp344 h-hclamp344 xl:w-[425px] xl:h-[400px] z-10 md:block self-start bg-elevation_one bg-cover bg-center bg-no-repeat bg-[url('/dread.png')] hidden"
+          "img rounded-[48px] w-wclamp344 h-hclamp344 xl:w-[425px] xl:h-[400px] z-10 md:block self-start bg-elevation_one bg-cover bg-center bg-no-repeat hidden"
         )}
         style={{
-          transform: `
-                    perspective(500px) ${zoom ? "scale(1.05)" : ""} rotateX(${
+          backgroundImage: `url(${imageUrl})`,
+          transform: `perspective(500px) ${zoom ? "scale(1.05)" : ""} rotateX(${
             rotate.x
-          }deg) rotateY(${rotate.y}deg)
-                    `,
+          }deg) rotateY(${rotate.y}deg)`,
           transition:
             "width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
         }}

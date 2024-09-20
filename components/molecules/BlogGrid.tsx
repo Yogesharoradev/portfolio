@@ -12,60 +12,60 @@ const BlogGrid = () => {
         <Blogwork
           blog="frost"
           tall
-          subtitle="docker networking"
-          link="https://blog.hemant.lol/docker"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="deep"
-          subtitle="graphql"
-          link="https://blog.hemant.lol/graphql"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="rain"
           tall
-          subtitle="kafka"
-          link="https://blog.hemant.lol/kafka"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="purp"
-          subtitle="whisper"
-          link="https://blog.hemant.lol/whisper"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="makima"
           tall
-          subtitle="cloudflare"
-          link="https://blog.hemant.lol/cloudflare"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="ghost"
           tall
-          subtitle="moving gradients"
-          link="https://blog.hemant.lol/moving-gradients"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="yoru"
           tall
           shrink
           commission
-          subtitle="grid"
-          link="https://blog.hemant.lol/grid"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="nisu"
           tall
-          subtitle="zustand"
-          link="https://blog.hemant.lol/zustand"
+          subtitle=""
+          link=""
         />
         <Blogwork
           blog="lost"
           subtitle="dnd"
-          link="https://blog.hemant.lol/drag-n-drop"
+          link=""
         />
         <Blogwork
           blog="momi"
-          subtitle="evolution"
-          link="https://blog.hemant.lol/evolution-of-frontend-development"
+          subtitle=""
+          link=""
         />
       </div>
     </div>

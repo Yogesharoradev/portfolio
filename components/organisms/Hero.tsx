@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
     >
       <div className="relative w-fit">
         <h1 className='before:content-["///"] before:h-[300px] before:text-[175px] before:font-[700] before:-z-10 before:select-none before:translate-x-[-95%] before:translate-y-0 webkit_text_stroke before:opacity-[0.25] before:tracking-[-.1em] before:absolute text-[65px] md:text-[96px] text-text_primary font-semibold w-fit'>
-          Hemant
+          Yogesh
         </h1>
         <ThemeToggle />
         <h4 className="mt-4 text-[22px] md:text-[26px]">
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
         </div>
         <DiscoverButton />
       </div>
-      <HeroImage />
+      <HeroImage imageUrl="/dread.png"/>
     </section>
   );
 };

@@ -5,10 +5,10 @@ import { ThemeProvider } from "@/providers/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Hemant",
+  title: "Yogesh",
   description: "Aesthetic, minimalistic, and responsive portfolio website.",
   openGraph: {
-    title: "Hemant",
+    title: "Yogesh",
     description: "not the only website ever",
     type: "website",
     url: "https://hemant.lol",

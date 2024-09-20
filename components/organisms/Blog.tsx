@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
       >
         <Tooltip tip="Click on an blogwork">
           <h2 className="inline-block mb-4">
-            <span className="text-accent">blog</span>:work
+            <span className="text-accent">blog</span>
           </h2>
         </Tooltip>
       </div>

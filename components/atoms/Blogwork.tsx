@@ -24,7 +24,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
   tall = false,
   shrink = false,
   commission = false,
-  link = "https://blog.hemant.lol",
+  link = "",
 }) => {
   const [clicked, setClicked] = useState(false);
 
@@ -50,7 +50,7 @@ const Blogwork: React.FC<BlogworkProps> = ({
   return (
     <>
       <Head>
-        {clicked ? <title>Hemant · {blog}</title> : <title>Hemant</title>}
+        {clicked ? <title>Yogesh · {blog}</title> : <title>Yogesh</title>}
       </Head>
 
       <div

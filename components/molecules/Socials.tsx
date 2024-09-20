@@ -1,10 +1,9 @@
 import Social from "@/components/atoms/Social";
-import { user } from "@/lib/utils";
 
 const Socials: React.FC = () => {
   return (
     <div className="flex gap-[.75rem]">
-      <Social tip="hemantwasthere" link="https://github.com/hemantwasthere">
+      <Social tip="YogeshAroraDev" link="https://github.com/Yogesharoradev">
         <svg
           width="24px"
           height="24px"
@@ -24,43 +23,9 @@ const Socials: React.FC = () => {
           ></path>
         </svg>
       </Social>
-      <Social tip={user.username} link={`https://discord.com/users/${user.id}`}>
-        <svg
-          width="24px"
-          height="24px"
-          className="social_svg"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          color="#dba895"
-        >
-          <path
-            d="M5.5 16c5 2.5 8 2.5 13 0M15.5 17.5l1 2s4.171-1.328 5.5-3.5c0-1 .53-8.147-3-10.5-1.5-1-4-1.5-4-1.5l-1 2h-2"
-            stroke="#dba895"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></path>
-          <path
-            d="M8.528 17.5l-1 2s-4.171-1.328-5.5-3.5c0-1-.53-8.147 3-10.5 1.5-1 4-1.5 4-1.5l1 2h2"
-            stroke="#dba895"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></path>
-          <path
-            d="M8.5 14c-.828 0-1.5-.895-1.5-2s.672-2 1.5-2 1.5.895 1.5 2-.672 2-1.5 2zM15.5 14c-.828 0-1.5-.895-1.5-2s.672-2 1.5-2 1.5.895 1.5 2-.672 2-1.5 2z"
-            stroke="#dba895"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></path>
-        </svg>
-      </Social>
       <Social
-        tip="hemant.is.there@gmail.com"
-        link="mailto:hemant.is.there@gmail.com"
+        tip="Yogesharora207@gmail.com"
+        link="mailto:Yogesharora207@gmail.com"
       >
         <svg
           width="24px"
@@ -86,26 +51,26 @@ const Socials: React.FC = () => {
           ></path>
         </svg>
       </Social>
-      <Social tip="xebec" link="https://www.buymeacoffee.com/xebec">
+      <Social tip="Call Me" link="tel:+919876543210">
         <svg
           width="24px"
           height="24px"
           className="social_svg"
-          viewBox="0 0 24 24"
           strokeWidth="1.5"
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           color="#dba895"
         >
           <path
-            d="M17 11.6V15a6 6 0 01-6 6H9a6 6 0 01-6-6v-3.4a.6.6 0 01.6-.6h12.8a.6.6 0 01.6.6zM12 9c0-1 .714-2 2.143-2v0A2.857 2.857 0 0017 4.143V3.5M8 9v-.5a3 3 0 013-3v0a2 2 0 002-2V3"
+            d="M20.39 15.58c-1.9 0-3.66-.73-5-1.95a8.1 8.1 0 01-2.71-2.7c-1.22-1.34-1.95-3.1-1.95-5a1 1 0 00-1-1h-1a1 1 0 00-1 1c0 2.94 1.07 5.73 3 7.83 2.11 2.11 4.9 3 7.83 3a1 1 0 001-1v-1a1 1 0 00-1-1z"
             stroke="#dba895"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           ></path>
           <path
-            d="M16 11h2.5a2.5 2.5 0 010 5H17"
+            d="M17 17l3 3m0-3l-3 3"
             stroke="#dba895"
             strokeWidth="1.5"
             strokeLinecap="round"

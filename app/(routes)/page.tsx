@@ -12,9 +12,9 @@ export default function Home() {
     <div className="">
       <Hero />
       <About />
-      <Blog />
       <Repos />
-      <Supporters />
+      <Blog />
+      <Supporters/>
       <Footer />
       {/* <Timeline timeline={timelines} /> */}
     </div>
