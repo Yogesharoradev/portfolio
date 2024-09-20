@@ -51,7 +51,7 @@ const Socials: React.FC = () => {
           ></path>
         </svg>
       </Social>
-      <Social tip="Call Me" link="tel:+919876543210">
+      <Social tip="Call Me" link="tel:+918427992959">
         <svg
           width="24px"
           height="24px"
