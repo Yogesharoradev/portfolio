@@ -5,7 +5,6 @@ import Hero from "@/components/organisms/Hero";
 import Repos from "@/components/organisms/Repos";
 import Supporters from "@/components/organisms/Supporters";
 import Timeline from "@/components/organisms/Timeline";
-import { timelines } from "@/data/timeline";
 
 export default function Home() {
   return (

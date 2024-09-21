@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import posthog from "posthog-js";
 import React from "react";
-
 import { cn } from "@/lib/utils";
+
 interface NavProps {
   href: string;
   section: string;
@@ -19,11 +18,6 @@ const Nav: React.FC<NavProps> = ({ href, section, isSelected }) => {
       className={cn(
         "no-underline list-none font-jetbrains rounded-[100px] active:scale-95 offset_ring"
       )}
-      onClick={() => {
-        posthog.capture(`"${href}" clicked`, {
-          Clicked: true,
-        });
-      }}
     >
       <div
         className="bg-transparent hover:bg-transparent border-none text-text_secondary text-[1.1rem] select-none flex flex-col items-center gap-[.75rem] py-[13px] px-[25px] rounded-[100px] cursor-pointer md:hover:bg-elevation_four group"
