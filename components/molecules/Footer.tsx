@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import posthog from "posthog-js";
 
 import Tooltip from "../atoms/Tooltip";
 import Socials from "./Socials";
@@ -22,14 +21,9 @@ const Footer: React.FC = () => {
           <Tooltip tip="how to delete">
             <Link
               className="transition-[0.3s_var(--bezier-one)] no-underline font-[0.9rem] rounded-[7px] py-[0.15rem] px-[0.5rem] hover:font-[400] hover:w-fit text-tex font-jetbrains hover:text-elevation_one hover:bg-accent offset_ring"
-              href="https://v1.hemant.lol"
+              href="#"
               target="_blank"
               rel="noreferrer"
-              onClick={() => {
-                posthog.capture("Footer V1 link clicked", {
-                  Clicked: true,
-                });
-              }}
             >
               V1
             </Link>
