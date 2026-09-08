@@ -137,14 +137,14 @@ const Repos: React.FC = () => {
                 >
                   <div id="top-part" className="flex justify-between">
                     <div className="info flex gap-[.2rem] items-center">
-                      <Image
+                      {/* <Image
                         width={16}
                         height={16}
                         src={`https://github.com/${owner.split("/")[0]}.png`}
                         alt={`${owner}'s profile picture`}
                         id="pfp"
                         className="rounded-[50%]"
-                      />
+                      /> */}
                       <h6 className="font-jetbrains">{owner.split("/")[0]}</h6>
                     </div>
                     <div>
