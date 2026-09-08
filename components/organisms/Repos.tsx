@@ -16,7 +16,7 @@ const Repos: React.FC = () => {
       repo: "Fitaah — Gym Management SaaS",
       link: "https://github.com/Yogesharoradev/gym-management-saas",
       description:
-        "A production-ready multi-tenant gym management SaaS built for real-world gym operations, covering members, memberships, attendance, payments, expiry & renewals, reports, authentication, and PDF receipts with a responsive admin experience.",
+        "A production-ready multi-tenant gym management SaaS  built for real-world gym operations, covering members, memberships, attendance, payments, expiry & renewals, reports, authentication, and PDF receipts with a responsive admin experience.",
       image: "",
       website: "",
       language: "Next.js, TypeScript, MongoDB, Tailwind",
@@ -201,7 +201,7 @@ const Repos: React.FC = () => {
                   </div>
                 </div>
               </Link>
-            )
+            ),
           )
         ) : (
           <>
